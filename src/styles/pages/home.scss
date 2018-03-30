@@ -1,0 +1,150 @@
+@import '../config/config';
+
+.content {
+  position: relative;
+  height: 80vh;
+  width: 100%;
+}
+
+.loading {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  background-color: $cloudy-two;
+  text-align: center;
+}
+
+.loading__content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: rem(370);
+  height: rem(230);
+  margin: auto;
+}
+
+.loading__content__img {
+  display: block;
+  margin: 0 auto rem(30);
+}
+
+.loading__content__percent {
+  font-size: rem(30);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: center;
+  color: $black;
+}
+
+.loading__content__welcome {
+  display: none;
+  font-size: rem(30);
+  font-weight: 300;
+  line-height: 1.33;
+  letter-spacing: normal;
+  text-align: center;
+  text-transform: uppercase;
+  
+  strong {
+   font-weight: 500; 
+  }
+}
+
+
+// Introduction
+.introduction {
+  height: 100%;
+  background-color: $black;
+}
+
+.introduction__logo {
+  display: block;
+  position: absolute;
+  top: rem(44);
+  left: rem(38);
+}
+
+.introduction__infos {
+  position: absolute;
+  top: 0;
+  right: rem(38);
+  width: rem(306);
+  height: rem(208);
+  padding: rem(83) rem(20);
+  background-color: $cloudy;
+  text-align: center;
+}
+
+.introduction__title {
+  margin-bottom: rem(10);
+  font-size: rem(45);
+  line-height: 0.67;
+  font-weight: 500;
+  letter-spacing: rem(0.3);
+  text-transform: uppercase;
+  color: $tomato;
+}
+
+.introduction__subtitle {
+  text-transform: uppercase;
+  font-size: rem(22);
+  line-height: 1.36;
+  color: $black;
+  margin-bottom: rem(7);
+  padding-bottom: rem(7);
+  border-bottom: rem(1) solid $black;
+}
+
+.introduction__paragraph {
+  font-size: rem(16);
+  font-weight: 500;
+  line-height: 1.88;
+  letter-spacing: rem(0.2);
+  color: $black;
+}
+
+.introduction__ahead {
+  position: absolute;
+  bottom: rem(50);
+  right: rem(30);
+  width: rem(316);
+  height: rem(308);
+}
+
+.introduction__ahead__title {
+  margin-bottom: rem(25);
+  font-size: rem(50);
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: left;
+  text-transform: uppercase;
+  color: $white;
+}
+
+.introduction__ahead__go {
+  display: block;
+  font-size: rem(18);
+  font-weight: 100;
+  letter-spacing: 0.6px;
+  text-align: left;
+  text-transform: uppercase;
+  color: $white;
+  
+  strong {
+    font-weight: 600
+  }
+
+  svg {
+    margin-left: rem(7);
+    vertical-align: middle;
+  }
+}

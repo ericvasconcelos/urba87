@@ -1,0 +1,109 @@
+@import '../config/config';
+
+.menu {
+  height: 20vh;
+  width: 100%;
+  background-color: $cloudy-two;
+  padding-top: rem(24);
+  margin: 0;
+  @include clearfix;
+}
+
+.menu__list {
+  display: block;
+  float: left;
+  margin-left: rem(33);
+}
+
+.menu__list__item {
+  margin-right: rem(15);
+  font-size: 18px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.6px;
+  text-align: left;
+  color: #372e2d;
+  text-transform: uppercase;
+  text-decoration: none;
+  @include transition(color .3s linear);
+
+  &.active,
+  &:hover {
+    color: $tomato;
+  }
+
+  &:after {
+    content: '|';
+    display: inline-block;
+    margin-left: rem(15);
+  }
+
+  &:last-child:after  {
+    display: none;
+  }
+}
+
+.menu__social {
+  display: block;
+  float: right;
+}
+
+.menu__social__item {
+  position: relative;
+  margin-right: rem(30);
+  cursor: pointer;
+
+  svg {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    z-index: 1;
+  }
+  
+  &:last-child:before {
+    content: '|';
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: rem(30);
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  &:hover {
+    .menu__social__item__info {
+      display: inline-block;
+    }
+  }
+}
+
+.menu__social__item__info {
+  display: none;
+  position: absolute;
+  z-index: 0;
+  left: rem(-47);
+  bottom: rem(77);
+  border-radius: rem(30);
+  background-color: $cloudy;
+  height: rem(30);
+  width: rem(190);
+  padding: 0 rem(10) 0 rem(40);
+  font-size: rem(12);
+  line-height: rem(32);
+  text-transform: uppercase;
+  letter-spacing: rem(01);
+  @include rotate(270deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+

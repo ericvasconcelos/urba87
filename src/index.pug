@@ -1,0 +1,33 @@
+doctype html  
+html(lang='pt-BR')
+  include includes/head.pug
+  body
+    #content.content
+      .introduction
+        img.introduction__logo(src='/images/inline/logo.svg')
+        .introduction__infos
+          h1.introduction__title Dois quartos
+          p.introduction__subtitle com suite e varanda (68m²)
+          p.introduction__paragraph Melhores ofertas de Coberturas Lineares!
+
+        .introduction__ahead
+          p.introduction__ahead__title Deixe-se acolher por esse novo estilo de vida.
+          a.introduction__ahead__go #[strong para começar:] scroll ou clique #[img(src='/images/inline/arrow-01-home.svg')]
+
+    include includes/menu.pug
+    #loading.loading
+      .loading__content
+        img.loading__content__img(src='/images/inline/loading.png', inline)
+        p.loading__content__percent 50%
+        p.loading__content__welcome
+          strong bem-vindo ao urbá#87 
+          br
+          | sua nova moradia na Tijuca
+      
+    script(src='./scripts/jquery-3.3.1.min.js')
+    script(src='./scripts/main.min.js')
+
+
+
+
+

@@ -1,0 +1,9 @@
+@import './config/config';
+@import './pages/pages';
+@import './partials/menu';
+
+body {
+  font-family: $font;
+  font-style: normal;
+  font-stretch: normal;
+}
