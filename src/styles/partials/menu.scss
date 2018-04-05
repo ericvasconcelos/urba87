@@ -60,6 +60,8 @@
     display: inline-block;
     vertical-align: middle;
     z-index: 1;
+    width: rem(32);
+    height: rem(32);
   }
   
   &:last-child:before {

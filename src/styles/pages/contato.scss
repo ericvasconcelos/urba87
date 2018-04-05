@@ -1,1 +1,136 @@
 @import '../config/config';
+
+.contact__title {
+  margin-bottom: rem(20);
+  font-family: $font-title;
+  font-size: rem(36);
+  line-height: 1.17;
+  letter-spacing: rem(-1.5);
+  text-transform: uppercase;
+  text-align: left;
+  color: $black;
+}
+
+.contact__paragraph {
+  font-family: $font;
+  font-size: rem(16);
+  font-weight: 300;
+  line-height: 1.38;
+  letter-spacing: rem(0.2);
+  color: $black;
+
+  strong {
+    font-weight: 500;
+  }
+}
+
+
+.form {
+  .input {
+    position: relative;
+    margin-bottom: rem(25);
+
+    input {
+      width: 100%;
+      height: rem(40);
+      border: solid rem(0.5) #c7c7c7;
+      outline: none;
+      padding: 0 rem(15);
+      border-radius: none;
+      font-family: $font;
+      font-size: rem(16);
+      line-height: rem(1.38);
+      letter-spacing: rem(0.2);
+      color: $cloudy;
+      @include placeholder {
+        color: $black;
+      }
+    }
+
+    textarea {
+      width: 100%;
+      height: rem(200);
+      border: solid rem(0.5) #c7c7c7;
+      border-radius: none;
+      outline: none;
+      padding: rem(20) rem(15);
+      font-family: $font;
+      font-size: rem(16);
+      line-height: rem(1.38);
+      letter-spacing: rem(0.2);
+      color: $cloudy;
+      @include placeholder {
+        color: $black;
+      }
+    }
+
+    span.message-error {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: rem(40);
+      width: 100%;
+      padding: 0 rem(15);
+      background-color: $white;
+      border: solid rem(0.5) #c7c7c7;
+      line-height: rem(40);
+      font-family: $font;
+      letter-spacing: rem(0.5);
+      color: $tomato;
+
+    }
+  }
+
+  button {
+    display: block;
+    float: right;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    font-size: rem(18);
+    font-weight: 500;
+    letter-spacing: rem(0.6);
+    text-align: left;
+    text-transform: uppercase;
+    color: $tomato;
+
+    svg {
+      margin-left: rem(7);
+      vertical-align: middle;
+    }
+  }
+}
+
+.contact__infos {
+  display: block;
+  margin-bottom: rem(35);
+  text-decoration: none;
+  outline: none;
+  
+  span.contact__infos__icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: rem(30);
+    height: rem(30);
+    margin-right: rem(15);
+    border-radius: 50%;
+    // background-color: $black;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  p.contact__infos__text {
+    display: inline-block;
+    vertical-align: middle;
+    font-family: $font;
+    font-size: rem(18);
+    font-weight: 300;
+    letter-spacing: rem(0.5);
+    color: $black;
+  }
+}
+

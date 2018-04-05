@@ -12,6 +12,8 @@ $(document).ready( function(){
   
 });
 
-// $(function(){
-  
-// });
+$(function(){
+  $('.modal__close').on('click', function() {
+    $(this).closest('#modal').fadeOut(300);
+  })
+});

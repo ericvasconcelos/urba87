@@ -1,0 +1,12 @@
+@import '../config/config';
+
+.header {
+  height: 10vh;
+  margin: 0 rem(30);
+  border-bottom: rem(1) solid #c7c7c7;
+}
+
+.header__logo {
+  display: block;
+  float: left;
+}

@@ -1,0 +1,35 @@
+doctype html  
+html(lang='pt-BR')
+  include includes/head.pug
+  body
+    include includes/header.pug
+
+    #content.content.content--with-header
+      .row
+        .col-25.padright-20
+          h1.perspective__title perspectivas
+          p.perspective__paragraph A #[strong sugestão de decoração] das unidades, bem como o projeto das áreas comuns, recebem os créditos da arquiteta #[strong Gisele Taranto], que traz novas ideias para soluções antigas.
+
+          p.perspective__paragraph A fachada, um espetáculo à parte, integra o paisagismo da #[strong Sá&Almeida] com o projeto da #[strong Cité Arquitetura].
+
+          .perspective__video(href='#modal-video')
+            .perspective__video__wrap
+              img.perspective__video__play(src='/images/inline/play.svg')
+              span.perspective__video__title ver vídeo perspectivas
+
+
+        .col-75 col-50
+
+    include includes/menu.pug
+    
+    #modal.modal
+      .modal__close x
+      .modal__content
+        .frame__wrapper
+          iframe(width='560', height='315', src='https://www.youtube.com/embed/GY02YyPC2iI?rel=0&amp;showinfo=0', frameborder='0', allow='autoplay; encrypted-media', allowfullscreen)
+
+      
+    script(src='./scripts/jquery-3.3.1.min.js')
+    script(src='./scripts/main.min.js')
+
+

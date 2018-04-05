@@ -1,9 +1,63 @@
 doctype html  
-html(lang='pt-BR')  
+html(lang='pt-BR')
   include includes/head.pug
   body
-    h1 Contact
+    include includes/header.pug
+
+    #content.content.content--with-header
+      .row
+        .col-25.padright-20
+          h1.contact__title entre em contato
+          p.contact__paragraph Deixe seus dados e um de nossos #[strong colaboradores] irá entrar em contato diretamente com você
+          
+        .col-50.padright-40
+          form#contact__form.contact__form.form
+            .input
+              input#contact-name(type='text', name='name', placeholder='Nome', required)
+              span.message-error Você precisa preencher esse campo
+            
+            .input
+              input#contact-phone(type='tel', name='phone', placeholder='Telefone', required)
+              span.message-error Você precisa preencher esse campo
+
+            .input
+              input#contact-email(type='email', name='email', placeholder='Email', required)
+              span.message-error Você precisa preencher esse campo
+
+            .input
+              textarea#contact-message(name='message', placeholder='Mensagem', required)
+              span.message-error Você precisa preencher esse campo
+
+            button#contact__submit enviar #[img(src='/images/inline/arrow-01-home.svg')]
+
+        .col-25.padleft-20
+          .contact__infos
+            span.contact__infos__icon
+              img(src='/images/inline/gmail.svg')
+            p.contact__infos__text Rua Barão de Ubá, 87
+          a.contact__infos(href='mailto:contato@urba87.com.br')
+            span.contact__infos__icon
+              img(src='/images/inline/gmail.svg')
+            p.contact__infos__text contato@urba87.com.br
+          a.contact__infos
+            span.contact__infos__icon
+              img(src='/images/inline/telefone.svg')
+            p.contact__infos__text + 55 21 99725-2550
+          a.contact__infos
+            span.contact__infos__icon
+              img(src='/images/inline/facebook.svg')
+            p.contact__infos__text /urba87
+
+    include includes/menu.pug
+    
+    #modal.modal
+      .modal__close x
+      .modal__content
+        .frame__wrapper
+          iframe(width='560', height='315', src='https://www.youtube.com/embed/GY02YyPC2iI?rel=0&amp;showinfo=0', frameborder='0', allow='autoplay; encrypted-media', allowfullscreen)
+
       
     script(src='./scripts/jquery-3.3.1.min.js')
     script(src='./scripts/main.min.js')
+
 
