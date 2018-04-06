@@ -1,1 +1,96 @@
 @import '../config/config';
+
+h1.datasheet__title {
+  margin-bottom: rem(20);
+  font-family: $font-title;
+  font-size: rem(36);
+  line-height: 1.17;
+  letter-spacing: rem(-1.5);
+  text-transform: uppercase;
+  text-align: left;
+  color: $black;
+}
+
+.datasheet__infos {
+  margin-bottom: rem(30);
+}
+
+h2.datasheet__subtitle {
+  font-family: $font;
+  font-size: rem(16);
+  font-weight: 300;
+  line-height: 1.38;
+  letter-spacing: rem(0.2);
+  font-weight: 500;
+  color: $greeny-blue;
+}
+
+.datasheet__paragraph {
+  font-family: $font;
+  font-size: rem(16);
+  font-weight: 300;
+  line-height: 1.38;
+  letter-spacing: rem(0.2);
+  color: $black;
+
+  strong {
+    font-weight: 500;
+  }
+}
+
+.squared {
+  font-size: 70%;
+  display: inline-block;
+  vertical-align: top;
+  padding-left: rem(1);
+}
+
+.datasheet__category__name {
+  margin-bottom: rem(20);
+  font-family: $font;
+  font-size: rem(18);
+  font-weight: 500;
+  line-height: 1.33;
+  letter-spacing: rem(0.1);
+  text-transform: uppercase;
+  color: $black;
+}
+
+.datasheet__category__item {
+  display: flex;
+  align-items: center;
+  margin-bottom: rem(15);  
+
+  p {
+    align-self: baseline;
+    font-family: $font;
+    font-size: rem(14px);
+    line-height: 1;
+    letter-spacing: rem(0.5);
+    color: #675b59;
+  }
+}
+
+.datasheet__category__item__img {
+  width: rem(35);
+  padding-right: rem(13);
+
+  svg {
+    width: 100%;
+    max-width: rem(22);
+    height: auto;
+    height: auto;
+    max-height: rem(22);
+  }
+}
+
+
+.datasheet__obs {
+  display: block;
+  float: left;
+  width: 100%;
+  font-family: $font;
+  font-size: rem(10);
+  line-height: 1.2;
+  color: #838383;
+}
