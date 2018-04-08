@@ -1,0 +1,90 @@
+doctype html  
+html(lang='pt-BR')
+  include includes/head.pug
+  body
+    include includes/header.pug
+
+    #content.content.content--with-header
+      .row
+        .col-25.padright-20
+          address.location__address
+            span
+              img(src='/images/inline/automacao.svg')
+            p rua barão de ubá, 87
+          h1.location__title LOCALIZAÇÃO#[br]ESTRATÉGICA
+  
+        .col-25.padright-20
+          p #[strong Use o tempo ao seu favor]: próximo ao #[strong metrô], #[strong teatros] e #[strong cinemas], daqui é rápido chegar à #[strong Zona Sul, Centro e Zona Norte]. Confira no nosso mapa os principais pontos próximos ao #[strong Urbá#87].
+          
+
+        .col-50.padright-20
+          p Clique nos ícones abaixo para ativar os filtros:
+          .location__filter
+            .col-20
+              .location__filter__item
+                .location__filter__item__img
+                  img(src='/images/inline/automacao.svg')
+                p Restaurantes
+
+              .location__filter__item
+                .location__filter__item__img
+                  img(src='/images/inline/automacao.svg')
+                p Metrô
+            .col-20
+              .location__filter__item
+                .location__filter__item__img
+                  img(src='/images/inline/automacao.svg')
+                p Bancos
+
+              .location__filter__item
+                .location__filter__item__img
+                  img(src='/images/inline/automacao.svg')
+                p Escola
+            .col-20
+              .location__filter__item
+                .location__filter__item__img
+                  img(src='/images/inline/automacao.svg')
+                p Bares
+
+              .location__filter__item
+                .location__filter__item__img
+                  img(src='/images/inline/automacao.svg')
+                p Mercados
+            .col-20
+              .location__filter__item
+                .location__filter__item__img
+                  img(src='/images/inline/automacao.svg')
+                p Hospitais
+
+              .location__filter__item
+                .location__filter__item__img
+                  img(src='/images/inline/automacao.svg')
+                p Shopping
+            .col-20
+              .location__filter__item
+                .location__filter__item__img
+                  img(src='/images/inline/automacao.svg')
+                p Lazer
+
+              .location__filter__item
+                .location__filter__item__img
+                  img(src='/images/inline/automacao.svg')
+                p Empresas
+
+
+
+
+
+    include includes/menu.pug
+    
+    #modal.modal
+      .modal__close x
+      .modal__content
+        .frame__wrapper
+          iframe(width='560', height='315', src='https://www.youtube.com/embed/GY02YyPC2iI?rel=0&amp;showinfo=0', frameborder='0', allow='autoplay; encrypted-media', allowfullscreen)
+
+      
+    script(src='./scripts/jquery-3.3.1.min.js')
+    script(src='./scripts/main.min.js')
+
+
