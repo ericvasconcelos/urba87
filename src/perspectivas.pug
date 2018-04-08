@@ -1,0 +1,74 @@
+doctype html  
+html(lang='pt-BR')
+  include includes/head.pug
+  body
+    include includes/header.pug
+
+    #content.content
+      .row.perspective__row
+        .col-25.padright-40
+          h1.perspective__title perspectivas
+          p.perspective__paragraph A #[strong sugestão de decoração] das unidades, bem como o projeto das áreas comuns, recebem os créditos da arquiteta #[strong Gisele Taranto], que traz novas ideias para soluções antigas.
+
+          p.perspective__paragraph A fachada, um espetáculo à parte, integra o paisagismo da #[strong Sá & Almeida] com o projeto da #[strong Cité Arquitetura].
+
+          .perspective__video
+            .perspective__video__wrap
+              img.perspective__video__play(src='/images/inline/play.svg')
+              span.perspective__video__title ver vídeo perspectivas
+
+
+        .col-25.padleft-40
+          .perspective__space
+            a.perspective__space__download(href='./assets/Maestra_urba87_plantashumanizadas.pdf', target='_blank')
+              p download perspectivas
+              img(src='/images/inline/download.svg')
+            .perspective__space__item
+              .carousel-dot.active(data-index='0')
+                h3 Sala coluna 02
+                p Opção de planta por Gisele Taranto
+              .carousel-dot(data-index='1')
+                h3 Sala coluna 02 - op02
+                p Opção de sala e suíte ampliadas
+              .carousel-dot(data-index='2')
+                h3 suíte coluna 02 - op01
+                p Planta padrão
+              .carousel-dot(data-index='3')
+                h3 suíte coluna 02 - op02
+                p Opção de sala e suíte ampliadas
+              .carousel-dot(data-index='4')
+                h3 SALA COBERTURA 1102
+                p Vista abrangente para as belezas da cidade e integração total para o terraço.
+              .carousel-dot(data-index='5')
+                h3 SALA COBERTURA 1102
+                p Opção de sala e suíte ampliadas
+
+        .col-50.padleft-20
+          .perspective__carousel.owl-carousel.owl-theme
+            .item
+              img(src='./images/Urba_G05_Perspectivas01.jpg')
+            .item
+              img(src='./images/Urba_G05_Perspectivas02.jpg')
+            .item
+              img(src='./images/Urba_G05_Perspectivas03.jpg')
+            .item
+              img(src='./images/Urba_G05_Perspectivas04.jpg')
+            .item
+              img(src='./images/Urba_G05_Perspectivas05.jpg')
+            .item
+              img(src='./images/Urba_G05_Perspectivas06.jpg')
+
+    include includes/menu.pug
+    
+    .modal.js-modal
+      .modal__close x
+      .modal__content
+        .frame__wrapper
+          iframe(width='560', height='315', src='https://www.youtube.com/embed/GY02YyPC2iI?rel=0&amp;showinfo=0', frameborder='0', allow='autoplay; encrypted-media', allowfullscreen)
+
+      
+    script(src='./scripts/jquery-3.3.1.min.js')
+    script(src='./scripts/owl.carousel.min.js')
+    script(src='./scripts/main.min.js')
+
+

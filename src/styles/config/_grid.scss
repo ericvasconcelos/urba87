@@ -5,12 +5,29 @@
 
 @import './reset';
 
+.content {
+  position: relative;
+  height: 80vh;
+  width: 100%;
+  padding: 0 rem(30);
+
+  &--no-header {
+    height: 90vh;
+    padding: 0;
+  }
+}
 
 .row {
-  padding: rem(30);
+  display: flex;
+  align-items: stretch;
+  padding: rem(15) 0;
   width: 100%;
   min-height: rem(1);
   @include clearfix;
+}
+
+[class^='col-'] {
+  position: relative;
 }
 
 .col-50,
@@ -18,6 +35,12 @@
   display: block;
   float: left;
   width: 50%;
+}
+
+.col-20 {
+  display: block;
+  float: left;
+  width: 20%;
 }
 
 .col-25 {
@@ -32,7 +55,7 @@
   width: 75%;
 }
 
-$pages: 10, 20, 40, 60, 80;
+$pages: 10, 20, 30, 40, 60, 80;
 
 @each $item in $pages {
   .padright-#{$item} {
@@ -57,3 +80,20 @@ $pages: 10, 20, 40, 60, 80;
     margin-left: rem($item);
   }
 }
+
+.border-top {
+  border-top: rem(1) solid #c7c7c7;
+}
+
+.border-right {
+  border-right: rem(1) solid #c7c7c7;
+}
+
+.border-bottom {
+  border-bottom: rem(1) solid #c7c7c7;
+}
+
+.border-left {
+  border-left: rem(1) solid #c7c7c7;
+}
+

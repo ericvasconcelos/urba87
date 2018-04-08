@@ -1,0 +1,11 @@
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon/download" fill="#FFEDE8" fill-rule="nonzero">
+            <g id="pencil">
+                <g>
+                    <path d="M9.99973333,0 C15.5223701,0 20,4.47713333 20,9.9998 C20,15.5224667 15.5223701,20 9.99973333,20 C4.47709651,20 0,15.5222 0,9.9998 C0,4.4774 4.47709651,0 9.99973333,0 Z M15,8.23529412 L12.1428571,8.23529412 L12.1428571,4 L7.85714286,4 L7.85714286,8.23529412 L5,8.23529412 L10,13.1764706 L15,8.23529412 Z M5,14.5882353 L5,16 L15,16 L15,14.5882353 L5,14.5882353 Z" id="Combined-Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

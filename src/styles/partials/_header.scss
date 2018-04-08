@@ -1,6 +1,8 @@
 @import '../config/config';
 
 .header {
+  display: block;
+  position: relative;
   height: 10vh;
   margin: 0 rem(30);
   border-bottom: rem(1) solid #c7c7c7;
@@ -9,4 +11,7 @@
 .header__logo {
   display: block;
   float: left;
+  position: relative;
+  top: 50%;
+  margin-top: rem(-21)
 }

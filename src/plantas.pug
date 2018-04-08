@@ -1,0 +1,27 @@
+doctype html  
+html(lang='pt-BR')
+  include includes/head.pug
+  body
+    include includes/header.pug
+
+    #content.content
+      .row
+        .col-25.padright-20
+          
+        .col-50
+
+        .col-25.padleft-20
+
+    include includes/menu.pug
+    
+    #modal.modal
+      .modal__close x
+      .modal__content
+        .frame__wrapper
+          iframe(width='560', height='315', src='https://www.youtube.com/embed/GY02YyPC2iI?rel=0&amp;showinfo=0', frameborder='0', allow='autoplay; encrypted-media', allowfullscreen)
+
+      
+    script(src='./scripts/jquery-3.3.1.min.js')
+    script(src='./scripts/main.min.js')
+
+

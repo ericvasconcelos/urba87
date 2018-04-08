@@ -4,10 +4,10 @@ html(lang='pt-BR')
   body
     include includes/header.pug
 
-    #content.content.content--with-header
+    #content.content
       .row
         .col-25.padright-40
-          h1.contact__title entre em contato
+          h1.contact__title entre em#[br]contato
           p.contact__paragraph Deixe seus dados e um de nossos #[strong colaboradores] irá entrar em contato diretamente com você
           
         .col-50.padright-40
@@ -28,12 +28,12 @@ html(lang='pt-BR')
               textarea#contact-message(name='message', placeholder='Mensagem', required)
               span.message-error Você precisa preencher esse campo
 
-            button#contact__submit enviar #[img(src='/images/inline/arrow-01-home.svg')]
+            button#contact__submit enviar #[img(src='/images/inline/arrowbemvindo.svg')]
 
-        .col-25.padleft-20
+        .col-25.padleft-30.border-left
           .contact__infos
             span.contact__infos__icon
-              img(src='/images/inline/gmail.svg')
+              img(src='/images/inline/maps.svg')
             p.contact__infos__text Rua Barão de Ubá, 87
           a.contact__infos(href='mailto:contato@urba87.com.br')
             span.contact__infos__icon
@@ -42,7 +42,9 @@ html(lang='pt-BR')
           a.contact__infos
             span.contact__infos__icon
               img(src='/images/inline/telefone.svg')
-            p.contact__infos__text + 55 21 99725-2550
+            p.contact__infos__text
+              | + 55 21 99725-2550
+              img.contact__infos__wpp(src='/images/inline/whastapp.svg')
           a.contact__infos
             span.contact__infos__icon
               img(src='/images/inline/facebook.svg')

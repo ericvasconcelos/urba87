@@ -2,6 +2,9 @@
 @import './pages/pages';
 @import './partials/menu';
 @import './partials/header';
+@import './partials/modal';
+@import './vendor/owl.carousel.min.css';
+@import './vendor/owl.theme.default.min.css';
 
 body {
   font-family: $font;

@@ -1,7 +1,7 @@
 @import '../config/config';
 
-.content--with-header {
-  
+.perspective__row {
+  height: 100%;
 }
 
 .perspective__title {
@@ -36,6 +36,16 @@
   background-size: cover;
   text-decoration: none;
   text-align: center;
+  cursor: pointer;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($black, 0.5);
+  }
 }
 
 .perspective__video__wrap {
@@ -64,58 +74,121 @@
   text-transform: uppercase;
 }
 
-.modal {
-  display: none;
-  position: absolute;
-  z-index: 999;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba($white, 0.9);
-}
-
-.modal__close {
-  position: absolute;
-  top: rem(30);
-  right: rem(30);
-  width: 30px;
-  height: 30px;
+.perspective__space {
+  display: block;
+  height: 100%;
   background-color: $tomato;
-  border-radius: 50%;
-  color: $white;
-  text-align: center;
-  font-size: rem(24);
-  cursor: pointer;
 }
 
-.modal__content {
-  width: 70%;
-  height: 80%;
-  margin: 5% auto;
-}
+.perspective__space__download {
+  display: block;
+  text-align: right;
+  height: rem(35);
+  padding: rem(6) rem(15);
 
-.frame__wrapper {
-  position: relative;
-  padding-bottom: 56.25%;
-  padding-top: 30px;
-  height: 0;
-  overflow: hidden;
+  p {
+    display: inline-block;
+    margin-right: rem(10);
+    vertical-align: middle;
+    font-family: $font;
+    font-size: rem(14);
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.29;
+    letter-spacing: rem(0.8);
+    text-transform: uppercase;
+    color: $white;
+  }
 
-  iframe,
-  object,
-  embed {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  svg {
+    display: inline-block;
+    vertical-align: middle;
   }
 }
 
+.perspective__space__item {
+  overflow-y: auto;
+  width: 100%;
+  height: calc(100% - 35px);
+  padding: 0 rem(30);
+  background-color: $very-light-pink;
+}
 
+.carousel-dot {
+  display: block;
+  width: 100%;
+  padding: rem(22) 0;
+  border-bottom: rem(1) solid $white;
+  cursor: pointer;
+  opacity: 0.4;
 
+  &.active {
+    opacity: 1;
+  }
 
+  h3 {
+    font-family: $font;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.33;
+    letter-spacing: rem(0.1);
+    text-transform: uppercase;
+    color: $tomato;
+  }
+
+  p {
+    font-family: $font;
+    font-size: rem(14);
+    font-weight: 300;
+    line-height: 1.36;
+    letter-spacing: rem(0.5);
+    color: #372e2d;
+  }
+}
+
+.perspective__carousel {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  .owl-nav {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    margin: 0;
+
+    button {
+      overflow: hidden;
+      width: rem(30);
+      height: rem(30);
+      margin: 0 !important;
+      border-radius: 50% !important;
+      background-color: $tomato !important;
+      text-align: center;
+      outline: none;
+
+      span {
+        color: $white;
+        font-size: rem(20);
+        font-weight: 100;
+        line-height: rem(10);
+      }
+    }
+
+    .owl-prev {
+      float: left;
+      margin-left: rem(20) !important;
+    }
+
+    .owl-next {
+      float: right;
+      margin-right: rem(20) !important;
+    }
+  }
+}
 
 
 

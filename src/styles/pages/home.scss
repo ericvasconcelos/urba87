@@ -1,17 +1,5 @@
 @import '../config/config';
 
-.content {
-  position: relative;
-  height: 80vh;
-  width: 100%;
-}
-
-.content--with-header {
-  position: relative;
-  height: 70vh;
-  width: 100%;
-}
-
 .loading {
   display: none;
   position: fixed;
@@ -68,7 +56,8 @@
 // Introduction
 .introduction {
   height: 100%;
-  background: url(../images/predio-inteiro.jpg) no-repeat center center $black;
+  width: 100%;
+  background: url(../images/Urba_HOME1920.jpg) no-repeat center center $black;
   background-size: cover;
 
   &:after {

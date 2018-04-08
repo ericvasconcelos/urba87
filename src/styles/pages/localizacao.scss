@@ -1,1 +1,204 @@
 @import '../config/config';
+
+.location__address {
+  display: flex;
+  align-items: center;
+
+  svg {
+    display: block;
+    margin-right: rem(7);
+  }
+
+  p {
+    font-size: rem(16);
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: rem(0.1);
+    font-style: normal;
+    text-transform: uppercase;
+    color: $tomato;
+  }
+}
+
+h1.location__title {
+  margin-bottom: rem(20);
+  font-family: $font-title;
+  font-size: rem(36);
+  line-height: 1.17;
+  letter-spacing: rem(-1.5);
+  text-transform: uppercase;
+  text-align: left;
+  color: $black;
+}
+
+p.location__paragraph {
+  font-family: $font;
+  font-size: rem(16);
+  font-weight: 300;
+  line-height: 1.38;
+  letter-spacing: rem(0.2);
+  color: $black;
+
+  strong {
+    font-weight: 500;
+  }
+}
+
+.location__filter__title {
+  margin-bottom: rem(20);
+  font-family: $font;
+  font-size: rem(16);
+  font-weight: 300;
+  line-height: 1.38;
+  letter-spacing: rem(0.2);
+  color: $black;
+}
+
+.location__filter {
+  display: block;
+  clear: both;
+  width: 100%;
+}
+
+.location__filter__item {
+  display: flex;
+  align-items: center;
+  margin-bottom: rem(15);
+  cursor: pointer;
+
+  p {
+    font-family: $font;
+    font-size: rem(14);
+    line-height: 1;
+    letter-spacing: rem(0.5);
+    color: #675b59;
+  }
+
+  &:hover,
+  &.active {
+    svg g {
+      fill: $tomato !important;
+    }
+  }
+}
+
+.location__filter__item__img {
+  width: rem(35);
+  padding-right: rem(13);
+
+  svg {
+    width: 100%;
+    max-width: rem(22);
+    height: auto;
+    height: auto;
+    max-height: rem(22);
+  }
+}
+
+.location__map {
+  display: block;
+  position: relative;
+  clear: both;
+  width: 100%;
+  height: auto;
+
+  &:hover {
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      right: 0;
+      background-color: rgba($black, 0.4);
+    }
+
+    .location__map__googlemaps {
+      display: block;
+    }
+  }
+}
+
+.location__map__direction {
+  display: block;
+  position: absolute;
+
+  &.top {
+    top: rem(-3);
+    left: 50%;
+  }
+
+  &.right {
+    top: 50%; 
+    right: rem(-3);
+  }
+
+  &.bottom {
+    bottom: rem(-3);
+    left: 50%;
+  }
+
+  &.left {
+    top: 50%; 
+    left: rem(-3);
+  }
+}
+
+a.location__map__googlemaps {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  width: rem(300);
+  height: rem(40);
+  margin-top: rem(-20);
+  margin-left: rem(-150);
+  padding-top: rem(8);
+  background-color: $tomato;
+  text-align: center;
+  text-decoration: none;
+
+  p {
+    display: inline-block;
+    margin-right: rem(10);
+    color: $white;
+    text-transform: uppercase;
+  }
+
+  span {
+    display: inline-block;
+    background-color: $white;
+    width: rem(20);
+    height: rem(20);
+    border-radius: 50%;
+    text-align: center;
+
+    svg {
+      display: inline-block;
+      margin-top: rem(4);
+      width: rem(12);
+      height: rem(12);
+    }
+  }
+}
+
+.location__map__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
