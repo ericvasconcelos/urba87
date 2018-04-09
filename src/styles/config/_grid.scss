@@ -24,6 +24,10 @@
   width: 100%;
   min-height: rem(1);
   @include clearfix;
+
+  &--stretch {
+    height: 100%;
+  }
 }
 
 [class^='col-'] {
@@ -78,6 +82,12 @@ $pages: 10, 20, 30, 40, 60, 80;
 @each $item in $pages {
   .marginleft-#{$item} {
     margin-left: rem($item);
+  }
+}
+
+@each $item in $pages {
+  .marginbottom-#{$item} {
+    margin-bottom: rem($item);
   }
 }
 

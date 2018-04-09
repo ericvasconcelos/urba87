@@ -1,9 +1,5 @@
 @import '../config/config';
 
-.perspective__row {
-  height: 100%;
-}
-
 .perspective__title {
   margin-bottom: rem(30);
   font-family: $font-title;
@@ -28,50 +24,7 @@
 }
 
 .perspective__video {
-  display: block;
-  position: relative;
-  width: 100%;
-  height: rem(250);
-  background: url(../images/predio-inteiro.jpg) no-repeat center center $black;
-  background-size: cover;
-  text-decoration: none;
-  text-align: center;
-  cursor: pointer;
-
-  &:before {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba($black, 0.5);
-  }
-}
-
-.perspective__video__wrap {
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: rem(200);
-  height: rem(80);
-  margin: auto;
-}
-
-.perspective__video__play {
-  display: block;
-  margin: 0 auto rem(10);
-}
-
-.perspective__video__title {
-  font-size: rem(16);
-  font-weight: 600;
-  line-height: 1.19;
-  letter-spacing: rem(0.5);
-  color: $white;
-  text-transform: uppercase;
+  background-image: url(../images/Urba_video-2.jpg);
 }
 
 .perspective__space {
@@ -146,51 +99,6 @@
     color: #372e2d;
   }
 }
-
-.perspective__carousel {
-  display: block;
-  width: 100%;
-  height: auto;
-
-  .owl-nav {
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    margin: 0;
-
-    button {
-      overflow: hidden;
-      width: rem(30);
-      height: rem(30);
-      margin: 0 !important;
-      border-radius: 50% !important;
-      background-color: $tomato !important;
-      text-align: center;
-      outline: none;
-
-      span {
-        color: $white;
-        font-size: rem(20);
-        font-weight: 100;
-        line-height: rem(10);
-      }
-    }
-
-    .owl-prev {
-      float: left;
-      margin-left: rem(20) !important;
-    }
-
-    .owl-next {
-      float: right;
-      margin-right: rem(20) !important;
-    }
-  }
-}
-
-
 
 
 

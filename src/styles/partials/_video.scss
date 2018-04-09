@@ -1,0 +1,39 @@
+.video {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: rem(250);
+  background-repeat: no-repeat;
+  background-position:  center center;
+  background-color: $black;
+  background-size: cover;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+.video__wrap {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: rem(200);
+  height: rem(80);
+  margin: auto;
+}
+
+.video__play {
+  display: block;
+  margin: 0 auto rem(10);
+}
+
+.video__title {
+  font-size: rem(16);
+  font-weight: 600;
+  line-height: 1.19;
+  letter-spacing: rem(0.5);
+  color: $white;
+  text-transform: uppercase;
+}

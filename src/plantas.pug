@@ -4,13 +4,95 @@ html(lang='pt-BR')
   body
     include includes/header.pug
 
-    #content.content
-      .row
-        .col-25.padright-20
-          
-        .col-50
+    #content.content.content--no-header
+      .plant__introduction
+        .left
+          .centered-block
+            a.plant__introduction__item(href='#', data-type='pavimento') pavimento tipo
+            a.plant__introduction__item(href='#', data-type='masterplans') masterplans
+        .right
+
+
+      .row.row--stretch
+        .col-25.padright-20.border-right
+          .select.select__plant
+            .select__item
+              p Pavimento tipo
+              span
+            .select__dropdown
+              .select__dropdown__item Plantas
+              .select__dropdown__item Plantas 2
+
+          h1.plant__title Plantas
+          .plant__infos
+            .plant__infos__item
+              .plant__infos__item__img
+                img(src='/images/inline/fechadura.svg')
+              p Fechadura biométrica nas unidades
+
+            .plant__infos__item
+              .plant__infos__item__img
+                img(src='/images/inline/piso.svg')
+              p Piso igual em todo o apartamento (amplitude e integração dos ambientes)
+
+            .plant__infos__item
+              .plant__infos__item__img
+                img(src='/images/inline/esquadrias.svg')
+              p Esquadrias em atendimento a norma de desempenho acústico
+
+            .plant__infos__item
+              .plant__infos__item__img
+                img(src='/images/inline/restaurante.svg')
+              p Cozinha integrada com a sala
+
+            .plant__infos__item
+              .plant__infos__item__img
+                img(src='/images/inline/arcondicionado.svg')
+              p Preparação para ar condicionado tipo split (elétrica e dreno)
+
+            .plant__infos__item
+              .plant__infos__item__img
+                img(src='/images/inline/varandas.svg')
+              p Varandas generosas
+
+            .plant__infos__item
+              .plant__infos__item__img
+                img(src='/images/inline/parede.svg')
+              p Paredes das áreas molhadas 100% revestidas
+
+        .col-50.padleft-40
+          .plant__carousel.owl-carousel.owl-theme
+            .item
+              img(src='./images/01_PAVTIPO-COLUNA 02_HI_FINAL.jpg')
+            .item
+              img(src='./images/02_PAVTIPO-COLUNA 04_HI_FINAL.jpg')
 
         .col-25.padleft-20
+          .plant__space
+            a.plant__space__download(href='./assets/Maestra_urba87_plantashumanizadas.pdf', target='_blank')
+              p download plantas
+              img(src='/images/inline/download.svg')
+            .plant__space__infos
+              img.plant__space__infos__img(src='/images/inline/legenda-01.svg')
+              h3.plant__space__infos__title COLUNA 05
+              .plant__space__infos__type 
+                strong Tipo de imóvel: 
+                span Pavimento TIPO
+              .plant__space__infos__column
+                strong Coluna: 
+                span 05
+              .plant__space__infos__area
+                strong Área Privativa: 
+                span 68,44 m²
+              .plant__space__infos__option
+                strong Opção: 
+                .select.select__space__infos
+                  .select__item
+                    p Planta padrão
+                    span
+                  .select__dropdown
+                    .select__dropdown__item Planta Gisele Taranto
+                    .select__dropdown__item Planta Suíte Ampliada
 
     include includes/menu.pug
     
@@ -22,6 +104,7 @@ html(lang='pt-BR')
 
       
     script(src='./scripts/jquery-3.3.1.min.js')
+    script(src='./scripts/owl.carousel.min.js')
     script(src='./scripts/main.min.js')
 
 

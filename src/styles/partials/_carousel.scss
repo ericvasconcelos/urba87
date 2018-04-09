@@ -1,0 +1,98 @@
+.owl-carousel {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  .owl-nav {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    margin: 0;
+
+    button {
+      overflow: hidden;
+      width: rem(30);
+      height: rem(30);
+      margin: 0 !important;
+      border-radius: 50% !important;
+      background-color: $tomato !important;
+      text-align: center;
+      outline: none;
+
+      span {
+        color: $white;
+        font-size: rem(20);
+        font-weight: 100;
+        line-height: rem(10);
+      }
+    }
+
+    .owl-prev {
+      float: left;
+      margin-left: rem(20) !important;
+    }
+
+    .owl-next {
+      float: right;
+      margin-right: rem(20) !important;
+    }
+  }
+}
+
+.carousel__column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  background-color: $very-light-pink;
+
+  &--three {
+    .carousel__dot {
+      height: 33.3333333%;
+    }
+  }
+
+  &--four {
+    .carousel__dot {
+      height: 25%;
+    }
+  }
+}
+
+.carousel__dot {
+  width: 100%;
+  padding: rem(22) 0;
+  padding: 0 rem(30);
+  border-bottom: rem(1) solid $white;
+  cursor: pointer;
+  opacity: 0.4;
+
+  &.active {
+    opacity: 1;
+  }
+
+  h3 {
+    font-family: $font;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.33;
+    letter-spacing: rem(0.1);
+    text-transform: uppercase;
+    color: $tomato;
+  }
+
+  p {
+    font-family: $font;
+    font-size: rem(14);
+    font-weight: 300;
+    line-height: 1.36;
+    letter-spacing: rem(0.5);
+    color: #372e2d;
+
+    strong {
+      font-weight: 500
+    }
+  }
+}

@@ -55,6 +55,7 @@
 
 // Introduction
 .introduction {
+  display: none;
   height: 100%;
   width: 100%;
   background: url(../images/Urba_HOME1920.jpg) no-repeat center center $black;
@@ -151,3 +152,127 @@
     vertical-align: middle;
   }
 }
+
+.content.no-padding {
+  padding: 0;
+}
+
+.overscroll {
+  width: 100%;
+
+  .row {
+    height: 80vh;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+
+    // &::-webkit-scrollbar {
+    //   display: none;
+    // }
+
+    .col-small {
+      flex: 0 0 auto;
+      width: 25vw;
+      padding: 0 0 0 rem(30);
+    }
+
+    .col-middle {
+      flex: 0 0 auto;
+      width: 40vw;
+      padding: 0 0 0 rem(30);
+    }
+
+    .col-large {
+      flex: 0 0 auto;
+      width: 50vw;
+      padding: 0 0 0 rem(30);
+    }
+
+    .no-pad {
+      padding: 0;
+    }
+  }
+}
+
+.enterprise__chapter {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: rem(22);
+  color: $black;
+  font-weight: normal;
+
+  span {
+    margin-right: rem(10);
+    font-family: $font-title;
+    font-size: rem(90);
+    line-height: rem(65);
+    letter-spacing: rem(-5.9);
+  }
+
+  p {
+    font-family: $font;
+    font-size: rem(24px);
+    line-height: 1;
+    letter-spacing: rem(0.1);
+  }
+}
+
+.enterprise__paragraph {
+  margin-bottom: rem(20);
+  font-size: rem(16);
+  font-weight: 300;
+  line-height: 1.38;
+  letter-spacing: rem(0.2);
+  color: $black;
+
+  strong {
+    font-weight: 500;
+  }
+}
+
+.enterprise__video {
+  background-image: url(../images/Urba_video-1.jpg);
+}
+
+.end-scroll {
+  display: flex;
+  align-items: center;
+  background-color: $black;
+  text-align: center;
+  padding: 0;
+
+  .link {
+    width: 100%;
+  }
+
+  p {
+    font-family: $font;
+    font-size: rem(20);
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: rem(0.1);
+    text-transform: uppercase;
+    color: $tomato;
+  }
+
+  h4 {
+    font-family: $font-title;
+    font-size: rem(40);
+    text-transform: uppercase;
+    color: $white;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
