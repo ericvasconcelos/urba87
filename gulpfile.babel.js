@@ -40,11 +40,11 @@ gulp.task('w', ['sass', 'html', 'scripts', 'imagemin'], () => {
 gulp.task('html', () =>
   gulp.src(`${dirs.src}/*.pug`)
     .pipe(pug())
+    .pipe(svgo())
+    .pipe(injectSvg({base: `${dirs.src}`}))
     .pipe(inlineImages({
       basedir: `${dirs.src}`
     }))
-    .pipe(svgo())
-    .pipe(injectSvg({base: `${dirs.src}`}))
     .pipe(minifyHTML({ conditionals: true }))
     .pipe(gulp.dest(`${dirs.dist}`))
 );

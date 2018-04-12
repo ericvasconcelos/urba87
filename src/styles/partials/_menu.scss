@@ -1,6 +1,8 @@
 @import '../config/config';
 
 .menu {
+  position: relative;
+  z-index: 1;
   display: block;
   clear: both;
   height: rem(100);
@@ -31,7 +33,7 @@
   line-height: normal;
   letter-spacing: 0.6px;
   text-align: left;
-  color: #372e2d;
+  color: $black;
   text-transform: uppercase;
   text-decoration: none;
   @include transition(color .3s linear);
@@ -59,6 +61,7 @@
   &:after {
     content: '|';
     display: inline-block;
+    color: $black !important;
 
     @media #{$media__m} {
       margin-left: rem(5);
@@ -115,6 +118,11 @@
     z-index: 1;
     width: rem(32);
     height: rem(32);
+    
+    path:first-child,
+    g {
+      @include transition(all .3s linear);
+    }
   }
   
   &:last-child:before {
@@ -137,6 +145,13 @@
   &:hover {
     .menu__social__item__info {
       display: inline-block;
+    }
+
+    svg {
+      path:first-child,
+      g {
+        fill: $tomato;
+      }
     }
   }
 }

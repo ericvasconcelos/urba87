@@ -70,10 +70,31 @@
     text-align: left;
     text-transform: uppercase;
     color: $tomato;
+    cursor: pointer;
+    @include transition(all .3s linear);
+
+    &:hover {
+      color: $greeny-blue;
+
+      svg {
+        ellipse {
+          fill: $greeny-blue;
+        }
+
+        g g path:first-child {
+          fill: $greeny-blue;
+        }
+      }
+    }
 
     svg {
       margin-left: rem(7);
       vertical-align: middle;
+
+      ellipse,
+      path {
+        @include transition(all .3s linear);
+      }
     }
   }
 }
@@ -83,6 +104,7 @@
   margin-bottom: rem(35);
   text-decoration: none;
   outline: none;
+  cursor: pointer;
   
   span.contact__infos__icon {
     display: none;

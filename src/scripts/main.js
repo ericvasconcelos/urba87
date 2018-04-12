@@ -1,25 +1,29 @@
 const pathname = window.location.pathname
 
-$(document).ready( function(){
-  // // When the page has loaded
-  // let percent = 0;
-  // var bar1 = new ldBar(".ldBar");
-  // var bar2 = $('.ldBar').ldBar;
 
-  // const calcPercent = setInterval(() => {
-  //   if (percent !== 100) {
-  //     bar1.set(percent += 1);
-  //   } else {
-  //     clearInterval(calcPercent)
-  //     $('.loading__content__percent').hide(0)
-  //     $('.loading__content__welcome').fadeIn(300)
+if (pathname === '/' || pathname === '/6d/urba/') {
+  $(document).ready( function(){
+    // When the page has loaded
+    let percent = 0;
+    var bar1 = new ldBar(".ldBar");
+    var bar2 = $('.ldBar').ldBar;
 
-  //     // setTimeout(() => {
-  //     //   $('#loading').fadeOut(500)
-  //     // }, 1000)
-  //   }
-  // }, 30)
-});
+    const calcPercent = setInterval(() => {
+      if (percent !== 100) {
+        bar1.set(percent += 1);
+        $('.loading__content__percent').text((percent += 1) + '%')
+      } else {
+        clearInterval(calcPercent)
+        $('.loading__content__percent').hide(0)
+        $('.loading__content__welcome').fadeIn(300)
+
+        setTimeout(() => {
+          $('#loading').fadeOut(500)
+        }, 3000)
+      }
+    }, 30)
+  });
+}
 
 $(function(){
   $('.modal__close').on('click', function() {
@@ -132,13 +136,6 @@ $(function(){
       renderScroll()
     })
 
-    $('.introduction').hide()
-    $('.content').removeClass('content--no-header')
-    $('.header, .overscroll').fadeIn(300);
-    $('.slider').slider({ instructionText: "Deslize para ver a foto" })
-    renderScroll()
-
-
     $('.celebrate__carousel').owlCarousel({
       items: 1,
       loop: false,
@@ -210,18 +207,104 @@ $(function(){
 
   // Plantas
   if (pathname === '/plantas.html' || pathname === '/6d/urba/plantas.html') {
-    $('.header, .row').hide();
+    // $('.header, .row').hide();
+
+    const Masterplans = $('#masterplans')
+    const Pavimento = $('#pavimento')
+    const title = $('#title')
+    const type = $('#type')
+    const column = $('#column')
+    const area = $('#area')
+    const options = $('#options')
+
+    const masterplansList = [
+      {
+        title: 'Térreo'
+      },
+      {
+        title: 'Cobertura'
+      }
+    ]
+
+    const masterplansCarousel = function () {
+      Masterplans.owlCarousel({
+        items: 1,
+        loop: false,
+        margin: 0,
+        nav: true,
+        dots: false,
+        onChanged: function(event) {
+          let index = event.item.index
+          if (index !== null && index !== "") {
+            console.log()
+            title.text(masterplansList[index].title)
+          }
+        }
+      })
+    }
+
+    const pavimentoCarousel = function () {
+      Pavimento.owlCarousel({
+        items: 1,
+        loop: false,
+        margin: 0,
+        nav: true,
+        dots: false
+      })
+    }
 
     $('.plant__introduction__item').on('click', function() {
-      const type = $(this).data('type')
+      const type = $(this).data('type').trim();
       $('.content').removeClass('content--no-header')
       $('.plant__introduction').hide();
       $('.header, .row').fadeIn(300);
+      $('select__value').text(type)
+
+      if (type === 'masterplans') {
+        Masterplans.show()
+        masterplansCarousel()
+      } else {
+        Pavimento.show()
+        pavimentoCarousel()
+      }
     })
 
-
-    $('.select__plant, .select__space__infos').on('click', function() {
+    $('.select').on('click', function() {
       $(this).toggleClass('active');
+    })
+
+    const selectPlant = $('.select__plant')
+    const legend = $('#legend')
+
+    selectPlant.find('.select__dropdown__item').on('click', function() {
+      let val = $(this).text().trim();
+      selectPlant.find('.select__value').text(val);
+      $('.plant__carousel').hide()
+
+      if (val === 'masterplans') {
+        Masterplans.fadeIn(300);
+        masterplansCarousel()
+        const masterData = Masterplans.data('owl.carousel')
+        masterData.to(0)
+        legend.attr('src', '')
+
+      } else if (val === 'pavimento tipo') {
+        Pavimento.fadeIn(300);
+        pavimentoCarousel()
+        const pavData = Pavimento.data('owl.carousel')
+        pavData.to(0)
+        legend.attr('src', './images/legenda/apto-1.svg')
+      }
+
+      $('.plant__carousel').trigger('refresh.owl.carousel');
+    })
+
+    const selectSpace = $('.select__space__infos')
+    selectSpace.find('.select__dropdown__item').on('click', function() {
+      let val = $(this).text().trim();
+      selectSpace.find('.select__value').text(val);
+
+
     })
 
     $(document).mouseup(function(e) {
@@ -231,14 +314,7 @@ $(function(){
         container.removeClass('active');
       }
     });
-
-    $('.plant__carousel').owlCarousel({
-      items: 1,
-      loop: false,
-      margin: 0,
-      nav: true,
-      dots: false
-    })
+    
   }
   
 

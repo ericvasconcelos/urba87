@@ -2,7 +2,7 @@
   display: block;
   position: relative;
   width: 100%;
-  height: rem(250);
+  height: rem(167);
   background-repeat: no-repeat;
   background-position:  center center;
   background-color: $black;
@@ -11,12 +11,14 @@
   text-align: center;
   cursor: pointer;
 
-  @media #{$media__m} {
-    height: rem(180);
+  svg path {
+    @include transition(all .3s linear);
   }
 
-  @media #{$media__l} {
-    height: rem(250);
+  &:hover {
+    svg path {
+      fill: $greeny-blue;
+    }
   }
 }
 

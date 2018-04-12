@@ -65,7 +65,7 @@
   background-color: $tomato;
   text-align: right;
   height: rem(35);
-  padding: rem(6) rem(15);
+  padding: rem(7) rem(15);
 
 
   &.first {
@@ -144,6 +144,7 @@
   border-bottom: rem(1) solid $white;
   cursor: pointer;
   opacity: 0.4;
+  @include transition(opacity .3s linear);
 
   @media #{$media__l} {
     padding: rem(22) 0;

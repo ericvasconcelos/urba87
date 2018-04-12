@@ -1,7 +1,7 @@
 @import '../config/config';
 
 .loading {
-  display: block;
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -25,9 +25,11 @@
   margin: auto;
 }
 
-.loading__content__img {
+.ldBar {
   display: block;
-  margin: 0 auto rem(30);
+  margin: 0 auto rem(10);
+  width: rem(150) !important;
+  height: rem(150) !important;
 }
 
 .loading__content__percent {
@@ -36,7 +38,7 @@
   line-height: 1.2;
   letter-spacing: normal;
   text-align: center;
-  color: $black;
+  color: #372e2d;
 }
 
 .loading__content__welcome {
@@ -47,9 +49,33 @@
   letter-spacing: normal;
   text-align: center;
   text-transform: uppercase;
+  color: #372e2d;
   
   strong {
    font-weight: 500; 
+  }
+}
+
+.loading__instructions {
+  position: absolute;
+  display: block;
+  right: rem(24);
+  bottom: rem(29);
+  font-size: rem(22);
+  font-weight: 300;
+  letter-spacing: 0.7px;
+  text-align: left;
+  text-transform: uppercase;
+  color: $black;
+  cursor: pointer;
+  
+  strong {
+    font-weight: 600
+  }
+
+  svg {
+    margin-left: rem(7);
+    vertical-align: middle;
   }
 }
 
@@ -58,16 +84,8 @@
   display: block;
   height: 100%;
   width: 100%;
-  background: url(../images/Urba_HOME1920.jpg) no-repeat center center $black;
+  background: url(../images/Urba_HOME1920.jpg) no-repeat center 100% $black;
   background-size: cover;
-
-  &:after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-color: rgba($black, 0.6);
-  }
 }
 
 .introduction__logo {
@@ -106,6 +124,10 @@
   margin-bottom: rem(7);
   padding-bottom: rem(7);
   border-bottom: rem(1) solid $black;
+
+  span {
+    text-transform: lowercase;
+  }
 }
 
 .introduction__paragraph {
@@ -143,6 +165,18 @@
   text-transform: uppercase;
   color: $white;
   cursor: pointer;
+
+  &:hover {
+    svg {
+      circle {
+        fill: $greeny-blue;
+      }
+
+      g g path:first-child {
+        fill: $white;
+      }
+    }
+  }
   
   strong {
     font-weight: 600
@@ -151,6 +185,11 @@
   svg {
     margin-left: rem(7);
     vertical-align: middle;
+
+    circle,
+    path {
+      @include transition(all .3s linear);
+    }
   }
 }
 

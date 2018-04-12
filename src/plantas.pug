@@ -4,23 +4,23 @@ html(lang='pt-BR')
   body
     include includes/header.pug
 
-    #content.content.content--no-header.plant
-      .plant__introduction
-        .left
-          a.plant__introduction__item(href='#', data-type='pavimento') pavimento tipo
-          a.plant__introduction__item(href='#', data-type='masterplans') masterplans
-        .right
+    #content.content.plant
+      //- .plant__introduction
+      //-   .left
+      //-     a.plant__introduction__item(href='#', data-type='pavimento tipo') pavimento tipo
+      //-     a.plant__introduction__item(href='#', data-type='masterplans') masterplans
+      //-   .right
 
 
       .row.row--stretch
         .col-25.first
           .select.select__plant
             .select__item
-              p Pavimento tipo
+              p.select__value.clear
               span
             .select__dropdown
-              .select__dropdown__item Plantas
-              .select__dropdown__item Plantas 2
+              .select__dropdown__item pavimento tipo
+              .select__dropdown__item masterplans
 
           h1.plant__title Plantas
           .plant__infos.first
@@ -60,36 +60,43 @@ html(lang='pt-BR')
               p Paredes das áreas molhadas 100% revestidas
 
         .col-50.second
-          .plant__carousel.owl-carousel.owl-theme
+          #pavimento.plant__carousel.owl-carousel.owl-theme
             .item
-              img(src='./images/01_PAVTIPO-COLUNA 02_HI_FINAL.jpg')
+              img(src='./images/plantas/masterplans/terreo.jpg')
             .item
-              img(src='./images/02_PAVTIPO-COLUNA 04_HI_FINAL.jpg')
+              img(src='./images/plantas/masterplans/cobertura.jpg')
+
+          #masterplans.plant__carousel.owl-carousel.owl-theme
+            .item
+              img(src='./images/plantas/pavimento/coluna1/padrao.jpg')
+            .item
+              img(src='./images/plantas/pavimento/coluna2/padrao.jpg')
 
         .col-25.third
           .plant__space
-            a.plant__space__download.first(href='./assets/Maestra_urba87_plantashumanizadas.pdf', target='_blank')
+            a.btn.plant__space__download.first(href='./assets/Maestra_urba87_plantashumanizadas.pdf', target='_blank')
               p download plantas
               img(src='/images/inline/download.svg')
             .plant__space__infos
-              img.plant__space__infos__img(src='/images/inline/legenda-01.svg')
-              h3.plant__space__infos__title COLUNA 05
+              img#legend.plant__space__infos__img
+              h3#title.plant__space__infos__title
               .plant__space__infos__type 
                 strong Tipo de imóvel: 
-                span Pavimento TIPO
+                span#type
               .plant__space__infos__column
                 strong Coluna: 
-                span 05
+                span#column
               .plant__space__infos__area
                 strong Área Privativa: 
-                span 68,44 m²
+                span#area 
               .plant__space__infos__option
                 strong Opção: 
                 .select.select__space__infos
                   .select__item
-                    p Planta padrão
+                    p.select__value Planta padrão
                     span
-                  .select__dropdown
+                  .select__dropdown#options
+                    .select__dropdown__item Planta padrão
                     .select__dropdown__item Planta Gisele Taranto
                     .select__dropdown__item Planta Suíte Ampliada
         
