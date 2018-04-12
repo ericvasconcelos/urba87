@@ -1,25 +1,43 @@
 @import '../config/config';
 
-.perspective__title {
-  margin-bottom: rem(30);
-  font-family: $font-title;
-  font-size: rem(36);
-  line-height: 1.17;
-  letter-spacing: rem(-1.5px);
-  color: $black;
-  text-transform: uppercase;
+.perspective {
+  .col-25.first {
+    @media #{$media__m} {
+      width: 50%;
+      padding-right: rem(40);
+    }
+
+    @media #{$media__l} {
+      width: 25%;
+    }
+  }
+
+  .space {
+    display: none;
+
+    @media #{$media__l} {
+      display: block;
+    }
+  }
+
+  .last {
+    @media #{$media__m} {
+      padding-left: rem(20);
+    }
+  }
 }
 
-.perspective__paragraph {
-  margin-bottom: rem(20);
-  font-size: rem(16);
-  font-weight: 300;
-  line-height: 1.38;
-  letter-spacing: rem(0.2);
-  color: $black;
+.perspective__title {
+  @media #{$media__m} {
+    font-size: rem(24);
+  }
 
-  strong {
-    font-weight: 500;
+  @media #{$media__l} {
+    font-size: rem(30);
+  }
+
+  @media #{$media__xl} {
+    font-size: rem(36);
   }
 }
 
@@ -29,15 +47,44 @@
 
 .perspective__space {
   display: block;
-  height: 100%;
-  background-color: $tomato;
+  margin-bottom: rem(40);
+
+  &.second {
+    @media #{$media__l} {
+      display: none;
+    }
+  }
+
+  @media #{$media__l} {
+    height: 100%;
+    margin-bottom: 0;
+  }
 }
 
 .perspective__space__download {
-  display: block;
+  background-color: $tomato;
   text-align: right;
   height: rem(35);
   padding: rem(6) rem(15);
+
+
+  &.first {
+    display: none;
+
+    @media #{$media__l} {
+      display: block;
+    }
+  }
+
+  &.second {
+    text-align: center;
+    display: block;
+
+    @media #{$media__l} {
+      display: none;
+    }
+  }
+  
 
   p {
     display: inline-block;
@@ -52,6 +99,16 @@
     letter-spacing: rem(0.8);
     text-transform: uppercase;
     color: $white;
+
+    @media #{$media__l} {
+      font-size: rem(12);
+      margin-right: rem(3);
+    }
+
+    @media #{$media__xl} {
+      font-size: rem(14);
+      margin-right: rem(10);
+    }
   }
 
   svg {
@@ -61,20 +118,36 @@
 }
 
 .perspective__space__item {
-  overflow-y: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
   width: 100%;
-  height: calc(100% - 35px);
-  padding: 0 rem(30);
+  padding: 0 rem(10);
   background-color: $very-light-pink;
+
+  @media #{$media__l} {
+    display: block;
+    overflow-y: auto;
+    padding: 0 rem(30);
+    height: calc(100% - 35px);
+  }
 }
 
 .carousel-dot {
   display: block;
   width: 100%;
-  padding: rem(22) 0;
+  flex: 0 0 auto;
+  padding: rem(22) rem(15);
   border-bottom: rem(1) solid $white;
   cursor: pointer;
   opacity: 0.4;
+
+  @media #{$media__l} {
+    padding: rem(22) 0;
+  }
 
   &.active {
     opacity: 1;
@@ -82,12 +155,24 @@
 
   h3 {
     font-family: $font;
-    font-size: 18px;
+    font-size: rem(18);
     font-weight: normal;
     line-height: 1.33;
     letter-spacing: rem(0.1);
     text-transform: uppercase;
     color: $tomato;
+
+    @media #{$media__m} {
+      font-size: rem(18);
+    }
+
+    @media #{$media__l} {
+      font-size: rem(14);
+    }
+
+    @media #{$media__xl} {
+      font-size: rem(18);
+    }
   }
 
   p {

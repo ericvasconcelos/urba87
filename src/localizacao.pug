@@ -4,75 +4,78 @@ html(lang='pt-BR')
   body
     include includes/header.pug
 
-    #content.content
-      .row.border-bottom
+    #content.content.location
+      .row.first-row
         .col-25.padright-30
-          address.location__address
+          address.location__address.mob-flex-hide
             img(src='/images/inline/end.svg')
             p rua barão de ubá, 87
-          h1.location__title LOCALIZAÇÃO#[br]ESTRATÉGICA
-  
-        .col-25.padleft-30.padright-30.border-left.border-right
-          p.location__paragraph #[strong Use o tempo ao seu favor]: próximo ao #[strong metrô], #[strong teatros] e #[strong cinemas], daqui é rápido chegar à #[strong Zona Sul, Centro e Zona Norte]. Confira no nosso mapa os principais pontos próximos ao #[strong Urbá#87].
+          h1.location__title.main-title LOCALIZAÇÃO#[br]ESTRATÉGICA
+          
+          address.location__address.desk-hide
+            img(src='/images/inline/end.svg')
+            p rua barão de ubá, 87
+
+        .col-25.col-mid
+          p.paragraph #[strong Use o tempo ao seu favor]: próximo ao #[strong metrô], #[strong teatros] e #[strong cinemas], daqui é rápido chegar à #[strong Zona Sul, Centro e Zona Norte]. Confira no nosso mapa os principais pontos próximos ao #[strong Urbá#87].
           
 
-        .col-50.padleft-30
+        .col-50.padleft-30.mob-hide
           p.location__filter__title Clique nos ícones abaixo para ativar os filtros:
           .location__filter
-            .col-20
-              .location__filter__item(data-filter='restaurantes')
-                .location__filter__item__img
-                  img(src='/images/inline/restaurante.svg')
-                p Restaurantes
+            .location__filter__item(data-filter='restaurantes')
+              .location__filter__item__img
+                img(src='/images/inline/restaurante.svg')
+              p Restaurantes
 
-              .location__filter__item(data-filter='metro')
-                .location__filter__item__img
-                  img(src='/images/inline/metro.svg')
-                p Metrô
-            .col-20
-              .location__filter__item(data-filter='bancos')
-                .location__filter__item__img
-                  img(src='/images/inline/bancos.svg')
-                p Bancos
+            .location__filter__item(data-filter='bancos')
+              .location__filter__item__img
+                img(src='/images/inline/bancos.svg')
+              p Bancos
 
-              .location__filter__item(data-filter='escolas')
-                .location__filter__item__img
-                  img(src='/images/inline/escolas.svg')
-                p Escolas
-            .col-20
-              .location__filter__item(data-filter='bares')
-                .location__filter__item__img
-                  img(src='/images/inline/bares.svg')
-                p Bares
+            .location__filter__item(data-filter='bares')
+              .location__filter__item__img
+                img(src='/images/inline/bares.svg')
+              p Bares
 
-              .location__filter__item(data-filter='mercados')
-                .location__filter__item__img
-                  img(src='/images/inline/mercados.svg')
-                p Mercados
-            .col-20
-              .location__filter__item(data-filter='hospitais')
-                .location__filter__item__img
-                  img(src='/images/inline/hospitais.svg')
-                p Hospitais
+            .location__filter__item(data-filter='hospitais')
+              .location__filter__item__img
+                img(src='/images/inline/hospitais.svg')
+              p Hospitais
 
-              .location__filter__item(data-filter='shopping')
-                .location__filter__item__img
-                  img(src='/images/inline/shopping.svg')
-                p Shopping
-            .col-20
-              .location__filter__item(data-filter='lazer')
-                .location__filter__item__img
-                  img(src='/images/inline/lazer.svg')
-                p Lazer
+            .location__filter__item(data-filter='lazer')
+              .location__filter__item__img
+                img(src='/images/inline/lazer.svg')
+              p Lazer
 
-              .location__filter__item(data-filter='empresas')
-                .location__filter__item__img
-                  img(src='/images/inline/empresas.svg')
-                p Empresas
-      
+            .location__filter__item(data-filter='metro')
+              .location__filter__item__img
+                img(src='/images/inline/metro.svg')
+              p Metrô
+
+            .location__filter__item(data-filter='escolas')
+              .location__filter__item__img
+                img(src='/images/inline/escolas.svg')
+              p Escolas
+
+            .location__filter__item(data-filter='mercados')
+              .location__filter__item__img
+                img(src='/images/inline/mercados.svg')
+              p Mercados
+
+            .location__filter__item(data-filter='shopping')
+              .location__filter__item__img
+                img(src='/images/inline/shopping.svg')
+              p Shopping
+
+            .location__filter__item(data-filter='empresas')
+              .location__filter__item__img
+                img(src='/images/inline/empresas.svg')
+              p Empresas
+    
       .row
         .location__map
-          a.location__map__googlemaps(href='https://www.google.com/maps/place/R.+Bar%C3%A3o+de+Ub%C3%A1,+87+-+Praca+da+Bandeira,+Rio+de+Janeiro+-+RJ,+20260-050/@-22.9132529,-43.2129912,17z/data=!3m1!4b1!4m5!3m4!1s0x997f008b98814d:0x1cfe25d3ccaf1714!8m2!3d-22.9132529!4d-43.2108025', target='_blank')
+          a.btn.location__map__googlemaps.first.mob-hide(href='https://www.google.com/maps/place/R.+Bar%C3%A3o+de+Ub%C3%A1,+87+-+Praca+da+Bandeira,+Rio+de+Janeiro+-+RJ,+20260-050/@-22.9132529,-43.2129912,17z/data=!3m1!4b1!4m5!3m4!1s0x997f008b98814d:0x1cfe25d3ccaf1714!8m2!3d-22.9132529!4d-43.2108025', target='_blank')
             p Ver no google maps
             span
               img(src='/images/inline/end.svg')
@@ -81,7 +84,13 @@ html(lang='pt-BR')
           img.location__map__direction.right(src='/images/inline/centro.svg')
           img.location__map__direction.bottom(src='/images/inline/zonasul.svg')
           img.location__map__direction.left(src='/images/inline/zonanorte.svg')
-          img.location__map__img.js-map(src='./images/Urba_mapa1920_OFF.jpg')
+          img.location__map__img.js-map.mob-hide(src='./images/Urba_mapa1920_OFF.jpg')
+          img.location__map__img.desk-hide(src='./images/Urba_mapa768_OFF.jpg')
+
+        a.btn.location__map__googlemaps.second(href='https://www.google.com/maps/place/R.+Bar%C3%A3o+de+Ub%C3%A1,+87+-+Praca+da+Bandeira,+Rio+de+Janeiro+-+RJ,+20260-050/@-22.9132529,-43.2129912,17z/data=!3m1!4b1!4m5!3m4!1s0x997f008b98814d:0x1cfe25d3ccaf1714!8m2!3d-22.9132529!4d-43.2108025', target='_blank')
+            p Ver no google maps
+            span
+              img(src='/images/inline/end.svg')
 
     include includes/menu.pug
     

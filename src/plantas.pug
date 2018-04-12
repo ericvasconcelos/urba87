@@ -4,17 +4,16 @@ html(lang='pt-BR')
   body
     include includes/header.pug
 
-    #content.content.content--no-header
+    #content.content.content--no-header.plant
       .plant__introduction
         .left
-          .centered-block
-            a.plant__introduction__item(href='#', data-type='pavimento') pavimento tipo
-            a.plant__introduction__item(href='#', data-type='masterplans') masterplans
+          a.plant__introduction__item(href='#', data-type='pavimento') pavimento tipo
+          a.plant__introduction__item(href='#', data-type='masterplans') masterplans
         .right
 
 
       .row.row--stretch
-        .col-25.padright-20.border-right
+        .col-25.first
           .select.select__plant
             .select__item
               p Pavimento tipo
@@ -24,7 +23,7 @@ html(lang='pt-BR')
               .select__dropdown__item Plantas 2
 
           h1.plant__title Plantas
-          .plant__infos
+          .plant__infos.first
             .plant__infos__item
               .plant__infos__item__img
                 img(src='/images/inline/fechadura.svg')
@@ -60,16 +59,16 @@ html(lang='pt-BR')
                 img(src='/images/inline/parede.svg')
               p Paredes das áreas molhadas 100% revestidas
 
-        .col-50.padleft-40
+        .col-50.second
           .plant__carousel.owl-carousel.owl-theme
             .item
               img(src='./images/01_PAVTIPO-COLUNA 02_HI_FINAL.jpg')
             .item
               img(src='./images/02_PAVTIPO-COLUNA 04_HI_FINAL.jpg')
 
-        .col-25.padleft-20
+        .col-25.third
           .plant__space
-            a.plant__space__download(href='./assets/Maestra_urba87_plantashumanizadas.pdf', target='_blank')
+            a.plant__space__download.first(href='./assets/Maestra_urba87_plantashumanizadas.pdf', target='_blank')
               p download plantas
               img(src='/images/inline/download.svg')
             .plant__space__infos
@@ -93,6 +92,47 @@ html(lang='pt-BR')
                   .select__dropdown
                     .select__dropdown__item Planta Gisele Taranto
                     .select__dropdown__item Planta Suíte Ampliada
+        
+          .plant__infos.second
+            .plant__infos__item
+              .plant__infos__item__img
+                img(src='/images/inline/fechadura.svg')
+              p Fechadura biométrica nas unidades
+
+            .plant__infos__item
+              .plant__infos__item__img
+                img(src='/images/inline/piso.svg')
+              p Piso igual em todo o apartamento (amplitude e integração dos ambientes)
+
+            .plant__infos__item
+              .plant__infos__item__img
+                img(src='/images/inline/esquadrias.svg')
+              p Esquadrias em atendimento a norma de desempenho acústico
+
+            .plant__infos__item
+              .plant__infos__item__img
+                img(src='/images/inline/restaurante.svg')
+              p Cozinha integrada com a sala
+
+            .plant__infos__item
+              .plant__infos__item__img
+                img(src='/images/inline/arcondicionado.svg')
+              p Preparação para ar condicionado tipo split (elétrica e dreno)
+
+            .plant__infos__item
+              .plant__infos__item__img
+                img(src='/images/inline/varandas.svg')
+              p Varandas generosas
+
+            .plant__infos__item
+              .plant__infos__item__img
+                img(src='/images/inline/parede.svg')
+              p Paredes das áreas molhadas 100% revestidas
+
+          a.plant__space__download.second(href='./assets/Maestra_urba87_plantashumanizadas.pdf', target='_blank')
+                p download plantas
+                img(src='/images/inline/download.svg')
+
 
     include includes/menu.pug
     

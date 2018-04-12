@@ -4,10 +4,10 @@ html(lang='pt-BR')
   body
     include includes/header.pug
 
-    #content.content
+    #content.content.ficha
       .row
-        .col-25.padright-20
-          h1.datasheet__title FICHA#[br]TÉCNICA
+        .col-25.first
+          h1.main-title.datasheet__title FICHA#[br]TÉCNICA
 
           .datasheet__infos
             h2.datasheet__subtitle TIPOLOGIA DAS UNIDADES 
@@ -21,7 +21,7 @@ html(lang='pt-BR')
             p.datasheet__paragraph 70 apartamentos de 68,50* m²
             p.datasheet__paragraph 2 coberturas lineares de 140,00* m²
           
-          .datasheet__infos
+          .datasheet__infos.last
             h2.datasheet__subtitle VAGAS
             p.datasheet__paragraph 1 vaga/unidade*#[span.squared 4]
 
@@ -35,7 +35,7 @@ html(lang='pt-BR')
 
           .datasheet__category__item
             .datasheet__category__item__img
-              img(src='/images/inline/armarios.svg')
+              img(src='/images/inline/wifi.svg')
             p Wi-fi nas áreas comuns
 
           .datasheet__category__item
@@ -46,7 +46,7 @@ html(lang='pt-BR')
           .datasheet__category__item
             .datasheet__category__item__img
               img(src='/images/inline/irrigacao.svg')
-            p Irrigação automática*2
+            p Irrigação automática*#[span.squared 2]
 
           .datasheet__category__item
             .datasheet__category__item__img
@@ -66,7 +66,7 @@ html(lang='pt-BR')
           .datasheet__category__item
             .datasheet__category__item__img
               img(src='/images/inline/fechadura.svg')
-            p Fechadu
+            p Fechadura biometrica
 
           .datasheet__category__item
             .datasheet__category__item__img

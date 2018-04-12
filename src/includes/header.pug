@@ -1,8 +1,17 @@
 header.header
-  a.header__logo(href='/')
-    img(src='/images/inline/logo-icon.png', inline)
+  a.header__logo.mob-hide(href='./')
+    img(src='/images/inline/logo-normal.svg')
+
+  a.header__logo.desk-hide(href='./')
+    img(src='/images/inline/logo-mobile.svg')
 
   .steps
     .steps__back
-    .steps__foward
+      img(src='/images/inline/arrowleft.svg')
+    
     .steps__count
+      span.count 01
+      span.pages / 05
+
+    .steps__foward
+      img(src='/images/inline/arrowright.svg')

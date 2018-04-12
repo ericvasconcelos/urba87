@@ -1,23 +1,30 @@
 @import '../config/config';
 
 .menu {
-  height: 10vh;
+  display: block;
+  clear: both;
+  height: rem(100);
   width: 100%;
   background-color: $cloudy-two;
-  padding-top: rem(24);
   margin: 0;
   @include clearfix;
+
+  @media #{$media__m} {
+    height: 10vh;
+  }
 }
 
 .menu__list {
+  position: relative;
   display: block;
   float: left;
+  top: 50%;
+  margin-top: rem(-14);
   margin-left: rem(33);
 }
 
 .menu__list__item {
-  margin-right: rem(15);
-  font-size: 18px;
+  font-size: rem(18);
   font-weight: 500;
   font-style: normal;
   font-stretch: normal;
@@ -28,6 +35,21 @@
   text-transform: uppercase;
   text-decoration: none;
   @include transition(color .3s linear);
+  
+  @media #{$media__m} {
+    margin-right: rem(5);
+    font-size: rem(13);
+  }
+
+  @media #{$media__l} {
+    margin-right: rem(10);
+    font-size: rem(16);
+  }
+
+  @media #{$media__xl} {
+    margin-right: rem(15);
+    font-size: rem(18);
+  }
 
   &.active,
   &:hover {
@@ -37,7 +59,18 @@
   &:after {
     content: '|';
     display: inline-block;
-    margin-left: rem(15);
+
+    @media #{$media__m} {
+      margin-left: rem(5);
+    }
+
+    @media #{$media__l} {
+      margin-left: rem(10);
+    }
+
+    @media #{$media__xl} {
+      margin-left: rem(15);
+    }
   }
 
   &:last-child:after  {
@@ -47,13 +80,33 @@
 
 .menu__social {
   display: block;
-  float: right;
+  width: 100%;
+  padding-top: rem(35);
+  text-align: center;
+
+  @media #{$media__m} {
+    position: relative;
+    top: 50%;
+    float: right;
+    width: auto;
+    text-align: left;
+    margin-top: rem(-18);
+    padding-top: 0;
+  }
 }
 
 .menu__social__item {
   position: relative;
   margin-right: rem(30);
   cursor: pointer;
+
+  @media #{$media__m} {
+    margin-right: rem(5);
+  }
+
+  @media #{$media__l} {
+    margin-right: rem(30);
+  }
 
   svg {
     position: relative;
@@ -71,6 +124,14 @@
     margin-right: rem(30);
     font-size: 18px;
     font-weight: 500;
+
+    @media #{$media__m} {
+      margin-right: rem(5);
+    }
+
+    @media #{$media__l} {
+      margin-right: rem(30);
+    }
   }
 
   &:hover {

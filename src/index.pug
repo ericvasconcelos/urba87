@@ -1,146 +1,161 @@
 doctype html  
 html(lang='pt-BR')
   include includes/head.pug
-  body
+  body.home
+    //- #loading.loading
+    //-   .loading__content
+        
+    //-     .ldBar(data-value="0", style='width:100%;height:60px', data-stroke='data:ldbar/res,gradient(0,1,#9df,#9fd,#df9,#fd9)', data-path='M10 20Q20 15 30 20Q40 25 50 20Q60 15 70 20Q80 25 90 20')
+
+    //-     img.loading__content__img(src='/images/inline/loading.png', inline)
+    //-     p.loading__content__percent 0%
+    //-     p.loading__content__welcome
+    //-       strong bem-vindo ao urbá#87 
+    //-       br
+    //-       | sua nova moradia na Tijuca
+
     include includes/header.pug
 
-    #content.content.no-padding
-      .introduction
-        img.introduction__logo(src='/images/inline/logo.svg')
-        .introduction__infos
-          h1.introduction__title Dois quartos
-          p.introduction__subtitle com suíte e varanda (68m²)
-          p.introduction__paragraph Melhores ofertas de Coberturas Lineares!
+    #content.content.no-padding.content--no-header
+      //- .introduction
+      //-   img.introduction__logo(src='/images/inline/logo.svg')
+      //-   .introduction__infos
+      //-     h1.introduction__title Dois quartos
+      //-     p.introduction__subtitle com suíte e varanda (68m²)
+      //-     p.introduction__paragraph Melhores ofertas de Coberturas Lineares!
 
-        .introduction__ahead
-          p.introduction__ahead__title Deixe-se acolher por esse novo estilo de vida.
-          a.introduction__ahead__go #[strong para começar:] scroll ou clique #[img(src='/images/inline/arrow-01-home.svg')]
+      //-   .introduction__ahead
+      //-     p.introduction__ahead__title Deixe-se acolher por esse novo estilo de vida.
+      //-     a.introduction__ahead__go #[strong para começar:] clique aqui #[img(src='/images/inline/arrow-01-home.svg')]
       
       .overscroll
         .row
           .col-small.col-1
-            h1.enterprise__chapter
+            h1.enterprise__chapter#natural
               span 01
               p NATURALMENTE  URBANO
             p.enterprise__paragraph O #[strong Urbá#87] chega à região da Tijuca, criando uma nova experiência em moradia, com espaços criados para serem cenários de experiências em comunhão: com pessoas, com o verde, com o design e com a cidade. 
             p.enterprise__paragraph Deixe-se acolher por esse novo estilo de vida.  #[strong Bem-vindos ao Urbá#87].
 
-            .video.enterprise__video
+            .video.enterprise__video.js-open-modal(data-item='video')
               .video__wrap
                 img.video__play(src='/images/inline/play.svg')
                 span.video__title ver vídeo urbá#87
 
           .col-middle.col-2.padright-30.border-right
-            img(src='./images/Urba_dia.jpg')
+            .slider
+              .slider.responsive
+                .left.image
+                  img(src='./images/Urba_dia.jpg')
+                .right.image
+                  img(src='./images/Urba_noite.jpg')
 
           .col-small.col-3
-            .modal-thumb.marginbottom-30
+            .modal-thumb.marginbottom-30.js-open-modal(data-item='casarao')
               img.modal-thumb__img(src='./images/Urba_casaroes.jpg')
-              .modal-thumb__title
+              .btn.modal-thumb__title
                 h3 ver planta do casarão
                 img(src='/images/inline/plantas.svg')
 
-            h1.enterprise__chapter
+            h1.enterprise__chapter#casarao
               span 02
               p CASARÕES
             p.enterprise__paragraph Uma #[strong atenção especial] foi dedicada à #[strong arquitetura] e ao #[strong paisagismo] do empreendimento. #[strong Os casarões] com pé direto alto, parte da paisagem local, mantém azulejos e pedras tradicionais conservados, valorizando #[strong as áreas comuns].
 
           .col-small.col-4
             .carousel__column.carousel__column--four
-              .carousel__dot.active(data-index='0')
+              .carousel__dot.celebrate__dot.active(data-index='0')
                 h3 COMEMORAR
                 p #[strong Espaço perfeito] para vivenciar e trocar experiências.
-              .carousel__dot(data-index='1')
+              .carousel__dot.celebrate__dot(data-index='1')
                 h3 conviver
                 p Um salão que é a #[strong extensão do seu lar], para receber e fazer amigos.
-              .carousel__dot(data-index='2')
+              .carousel__dot.celebrate__dot(data-index='2')
                 h3 brincar
                 p Espaço livre e seguro para a #[strong imaginação correr solta].
-              .carousel__dot(data-index='3')
+              .carousel__dot.celebrate__dot(data-index='3')
                 h3 EXERCITAR
                 p Academia projetada em ambiente #[strong amplo e inspirador], dedicado ao seu relaxamento e bem-estar.
 
           .col-large.col-5
-            .perspective__carousel.owl-carousel.owl-theme
+            .celebrate__carousel.owl-carousel.owl-theme
               .item
-                img(src='./images/Urba_G05_Perspectivas01.jpg')
+                img(src='./images/Urba_G02_Comemorar.jpg')
               .item
-                img(src='./images/Urba_G05_Perspectivas02.jpg')
+                img(src='./images/Urba_G02_Conviver.jpg')
               .item
-                img(src='./images/Urba_G05_Perspectivas03.jpg')
+                img(src='./images/Urba_G02_brincar.jpg')
               .item
-                img(src='./images/Urba_G05_Perspectivas04.jpg')
+                img(src='./images/Urba_G02_exercitar.jpg')
 
           .col-small.col-6
-            h1.enterprise__chapter
+            h1.enterprise__chapter#rooftop
               span 03
               p ROOFTOP
             p.enterprise__paragraph Na área #[strong comum da cobertura], uma ampla e linda vista alcança o #[strong Cristo] e se torna moldura para momentos de lazer e descanso.  #[strong Piscina, sauna] e um #[strong quintal gourmet], com churrasqueira e forno de pizza, completam as opões de lazer que o #[strong Urbá#87] oferece.
 
-            .modal-thumb.marginbottom-30
-              .modal-thumb__title
+            .modal-thumb.marginbottom-30.js-open-modal(data-item='rooftop')
+              .btn.modal-thumb__title
                 h3 ver planta do casarão
                 img(src='/images/inline/plantas.svg')
               img.modal-thumb__img(src='./images/Urba_rooftop.jpg')
               
           .col-small.col-7
             .carousel__column.carousel__column--three
-              .carousel__dot.active(data-index='0')
+              .carousel__dot.plant__dot.active(data-index='0')
                 h3 relaxar
                 p Espaço com #[strong sauna e skypool] com vista privilegiada, para usar na hora que você quiser.
-              .carousel__dot(data-index='1')
+              .carousel__dot.plant__dot(data-index='1')
                 h3 GRELHAR E ASSAR
                 p Ambientes com espaço de sobra para #[strong se divertir com os amigos], seja grelhando ou assando.
-              .carousel__dot(data-index='2')
+              .carousel__dot.plant__dot(data-index='2')
                 h3 skypool
                 p Dia e noite, sem #[strong nenhum prédio ao redor], há espaço de sobra para celebrar ou relaxar.
 
           .col-large.col-8
-            .perspective__carousel.owl-carousel.owl-theme
+            .plant__carousel.owl-carousel.owl-theme
               .item
-                img(src='./images/Urba_G05_Perspectivas01.jpg')
+                img(src='./images/Urba_G03_relaxar.jpg')
               .item
-                img(src='./images/Urba_G05_Perspectivas02.jpg')
+                img(src='./images/Urba_G03_churrasqueira.jpg')
               .item
-                img(src='./images/Urba_G05_Perspectivas03.jpg')
-              .item
-                img(src='./images/Urba_G05_Perspectivas04.jpg')
+                img(src='./images/Urba_G03_skypool.jpg')
 
           .col-small.col-9
             .modal-thumb.marginbottom-30
               img.modal-thumb__img(src='./images/Urba_fachada.jpg')
 
-            h1.enterprise__chapter
+            h1.enterprise__chapter#art
               span 04
               p A ARTE DE VIVER BEM
 
-            p Uma atenção especial foi dedicada à arquitetura e ao paisagismo do empreendimento. Os casarões com pé direto alto, parte da paisagem local, mantém azulejos e pedras tradicionais conservados, valorizando as áreas comuns.
+            p.enterprise__paragraph Uma atenção especial foi dedicada à arquitetura e ao paisagismo do empreendimento. Os casarões com pé direto alto, parte da paisagem local, mantém azulejos e pedras tradicionais conservados, valorizando as áreas comuns.
 
           .col-small.col-10
             .carousel__column.carousel__column--four
-              .carousel__dot.active(data-index='0')
+              .carousel__dot.art__dot.active(data-index='0')
                 h3 produzir
                 p Uma sala que é o meio termo perfeito entre a #[strong casa e o escritório].
-              .carousel__dot(data-index='1')
+              .carousel__dot.art__dot(data-index='1')
                 h3 lavar
                 p Lavanderia compartilhada e sustentável, com #[strong máquinas semi-industriais], para cuidar de suas roupas e do planeta.
-              .carousel__dot(data-index='2')
+              .carousel__dot.art__dot(data-index='2')
                 h3 estacionar
                 p Espaço para compartilhamento de bikes e carro, #[strong ponto de energia] para veículos elétricos e área para #[strong lavagem] de carros.
-              .carousel__dot(data-index='3')
+              .carousel__dot.art__dot(data-index='3')
                 h3 plantar
                 p Horta #[strong compartilhada] para plantar e colher boas #[strong histórias] entre vizinhos.
 
           .col-large.col-11
-            .perspective__carousel.owl-carousel.owl-theme
+            .art__carousel.owl-carousel.owl-theme
               .item
-                img(src='./images/Urba_G05_Perspectivas01.jpg')
+                img(src='./images/Urba_G04_produzir.jpg')
               .item
-                img(src='./images/Urba_G05_Perspectivas02.jpg')
+                img(src='./images/Urba_G04_lavar.jpg')
               .item
-                img(src='./images/Urba_G05_Perspectivas03.jpg')
+                img(src='./images/Urba_G04_estacionar.jpg')
               .item
-                img(src='./images/Urba_G05_Perspectivas04.jpg')
+                img(src='./images/Urba_G04_plantar.jpg')
           
           .col-small.col-11.end-scroll.no-pad
             a.link
@@ -148,17 +163,22 @@ html(lang='pt-BR')
               h4 plantas
 
     include includes/menu.pug
-    #loading.loading
-      .loading__content
-        img.loading__content__img(src='/images/inline/loading.png', inline)
-        p.loading__content__percent 50%
-        p.loading__content__welcome
-          strong bem-vindo ao urbá#87 
-          br
-          | sua nova moradia na Tijuca
+
+    .modal.js-modal
+      .modal__close x
+      .modal__content
+        .frame__wrapper.modal__video
+          iframe(width='560', height='315', src='https://www.youtube.com/embed/GY02YyPC2iI?rel=0&amp;showinfo=0', frameborder='0', allow='autoplay; encrypted-media', allowfullscreen)
+
+        img.img-casarao(src='./images/12-TERREO_HI_FINAL.jpg')
+        img.img-rooftop(src='./images/13-COBERTURA_HI_FINAL.jpg')
+
+
       
     script(src='./scripts/jquery-3.3.1.min.js')
     script(src='./scripts/owl.carousel.min.js')
+    script(src='./scripts/imagSlider.js')
+    script(src='./scripts/loading-bar.min.js')
     script(src='./scripts/main.min.js')
 
 

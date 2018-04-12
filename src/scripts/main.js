@@ -1,51 +1,215 @@
 const pathname = window.location.pathname
 
 $(document).ready( function(){
-  // When the page has loaded
-  
-  setTimeout(() => {
-    $('.loading__content__percent').hide(0)
-    $('.loading__content__welcome').fadeIn(300)
-  }, 1000)
+  // // When the page has loaded
+  // let percent = 0;
+  // var bar1 = new ldBar(".ldBar");
+  // var bar2 = $('.ldBar').ldBar;
 
-  setTimeout(() => {
-    $('#loading').fadeOut(1000)
-  }, 2000)
-  
+  // const calcPercent = setInterval(() => {
+  //   if (percent !== 100) {
+  //     bar1.set(percent += 1);
+  //   } else {
+  //     clearInterval(calcPercent)
+  //     $('.loading__content__percent').hide(0)
+  //     $('.loading__content__welcome').fadeIn(300)
+
+  //     // setTimeout(() => {
+  //     //   $('#loading').fadeOut(500)
+  //     // }, 1000)
+  //   }
+  // }, 30)
 });
 
 $(function(){
   $('.modal__close').on('click', function() {
-    $(this).closest('.js-modal').fadeOut(300);
+    $(this).closest('.js-modal').fadeOut(300)
+    $('.frame__wrapper, .js-modal img').hide()
+  })
+
+  $('.js-open-modal').on('click', function() {
+    $('.js-modal').fadeIn(300)
+    const item = $(this).data('item')
+    if (item === 'video') {
+      $('.modal__video').show()
+    } else if (item === 'casarao') {
+      $('.img-casarao').show()
+    } else if (item === 'rooftop') {
+      $('.img-rooftop').show()
+    }
   })
 
   // Home
-  if (pathname === '/') {
-    const doc = document;
-    var mouseWheelEvt = function (event) {
-      if (doc.querySelector('.row').doScroll)
-        doc.querySelector('.row').doScroll(event.wheelDelta>0?"left":"right");
-      else if ((event.wheelDelta || event.detail) > 0)
-        doc.querySelector('.row').scrollLeft -= 30;
-      else
-        doc.querySelector('.row').scrollLeft += 30;
+  if (pathname === '/' || pathname === '/6d/urba/') {
+    $('.steps').show()
 
-      return false;
+    const renderScroll = function() {
+      const doc = document;
+      var mouseWheelEvt = function (event) {
+        if (doc.querySelector('.row').doScroll)
+          doc.querySelector('.row').doScroll(event.wheelDelta>0?"left":"right");
+        else if ((event.wheelDelta || event.detail) > 0)
+          doc.querySelector('.row').scrollLeft -= 30;
+        else
+          doc.querySelector('.row').scrollLeft += 30;
+
+        return false;
+      }
+      doc.querySelector('.row').addEventListener("mousewheel", mouseWheelEvt);
+
+      const natural = $('#natural').offset().left
+      const casarao = $('#casarao').offset().left
+      const rooftop = $('#rooftop').offset().left
+      const art = $('#art').offset().left
+      const endScroll = $('.end-scroll').offset().left
+
+      const anchorScrollLeft = function(pos) {
+        let positionAnchor
+        if (pos === 1) {
+          positionAnchor = natural
+        } else if (pos === 2) {
+          positionAnchor = casarao
+        } else if (pos === 3) {
+          positionAnchor = rooftop
+        } else if (pos === 4) {
+          positionAnchor = art
+        } else if (pos === 5) {
+          positionAnchor = endScroll
+        }
+
+        $('.overscroll')
+          .find('.row')
+          .animate(
+            {scrollLeft: positionAnchor - 30}, 800);
+
+        setTimeout(function() {
+          $('.count').text('0' + position)
+        }, 800)
+        
+        return false;
+      }
+
+      let position = 1;
+      $('.steps__back').on('click', function() {
+        if (position !== 1) {
+          position -= 1
+        }
+
+        anchorScrollLeft(position)
+      })
+
+      $('.steps__foward').on('click', function() {
+        if (position !== 5) {
+          position += 1
+        }
+
+        anchorScrollLeft(position)
+      })
+
+      $('.row').on('scroll', function(e) {
+        let scrollPosition = $(this).scrollLeft()
+        if (scrollPosition <= 30) {
+          position = 1
+        } else if (scrollPosition <= casarao) {
+          position = 2
+        } else if (scrollPosition <= rooftop) {
+          position = 3
+        } else if (scrollPosition <= art) {
+          position = 4
+        } else if (scrollPosition <= endScroll) {
+          position = 5
+        }
+
+        $('.count').text('0' + position)
+      })
     }
-    doc.querySelector('.row').addEventListener("mousewheel", mouseWheelEvt);
+
+    $('.introduction__ahead__go').on('click', function() {
+      $('.introduction').hide()
+      $('.content').removeClass('content--no-header')
+      $('.header, .overscroll').fadeIn(300);
+      $('.slider').slider({ instructionText: "Deslize para ver a foto" })
+      renderScroll()
+    })
+
+    $('.introduction').hide()
+    $('.content').removeClass('content--no-header')
+    $('.header, .overscroll').fadeIn(300);
+    $('.slider').slider({ instructionText: "Deslize para ver a foto" })
+    renderScroll()
 
 
-    $('.perspective__carousel').owlCarousel({
+    $('.celebrate__carousel').owlCarousel({
       items: 1,
       loop: false,
       margin: 0,
       nav: true,
-      dots: false
+      dots: false,
+      onChanged(event) {
+        $('.celebrate__dot').removeClass('active')
+        $('.celebrate__dot').eq(event.item.index).addClass('active')
+      }
     })
+
+    $('.celebrate__dot').on('click', function() {
+      $('.celebrate__dot').removeClass('active')
+      const $this = $(this)
+      const carousel = $('.celebrate__carousel').data('owl.carousel');
+      const index = $this.data('index')
+
+      $this.addClass('active')
+      carousel.to(index)
+    })
+
+    $('.plant__carousel').owlCarousel({
+      items: 1,
+      loop: false,
+      margin: 0,
+      nav: true,
+      dots: false,
+      onChanged(event) {
+        $('.plant__dot').removeClass('active')
+        $('.plant__dot').eq(event.item.index).addClass('active')
+      }
+    })
+
+    $('.plant__dot').on('click', function() {
+      $('.plant__dot').removeClass('active')
+      const $this = $(this)
+      const carousel = $('.plant__carousel').data('owl.carousel');
+      const index = $this.data('index')
+
+      $this.addClass('active')
+      carousel.to(index)
+    })
+
+
+    $('.art__carousel').owlCarousel({
+      items: 1,
+      loop: false,
+      margin: 0,
+      nav: true,
+      dots: false,
+      onChanged(event) {
+        $('.art__dot').removeClass('active')
+        $('.art__dot').eq(event.item.index).addClass('active')
+      }
+    })
+
+    $('.art__dot').on('click', function() {
+      $('.art__dot').removeClass('active')
+      const $this = $(this)
+      const carousel = $('.art__carousel').data('owl.carousel');
+      const index = $this.data('index')
+
+      $this.addClass('active')
+      carousel.to(index)
+    })
+
   }
 
   // Plantas
-  if (pathname === '/plantas.html') {
+  if (pathname === '/plantas.html' || pathname === '/6d/urba/plantas.html') {
     $('.header, .row').hide();
 
     $('.plant__introduction__item').on('click', function() {
@@ -79,11 +243,7 @@ $(function(){
   
 
   // Perspectivas
-  if (pathname === '/perspectivas.html') {
-    $('.perspective__video').on('click', function() {
-      $('.js-modal').fadeIn(300);
-    })
-
+  if (pathname === '/perspectivas.html' || pathname === '/6d/urba/perspectivas.html') {
     $('.perspective__carousel').owlCarousel({
       items: 1,
       loop: false,

@@ -1,18 +1,53 @@
 @import '../config/config';
 
-h1.datasheet__title {
-  margin-bottom: rem(20);
-  font-family: $font-title;
-  font-size: rem(36);
-  line-height: 1.17;
-  letter-spacing: rem(-1.5);
-  text-transform: uppercase;
-  text-align: left;
-  color: $black;
+.ficha {
+  .row {
+    display: block;
+
+    @media #{$media__m} {
+      display: flex;
+    }
+  }
+
+  .col-25.first {
+    @media #{$media__m} {
+      margin-right: rem(60);
+      border-right: rem(1) solid #c7c7c7;
+    }
+
+    @media #{$media__l} {
+      
+    }
+  }
+
+  .col-25 {
+    @media #{$media__m} {
+      float: left;
+      width: 50%;
+      margin-bottom: rem(20);
+
+      &:nth-child(3) {
+        clear: both;
+      }
+    }
+
+    @media #{$media__l} {
+      margin-bottom: 0;
+      width: 25%;
+
+      &:nth-child(3) {
+        clear: none;
+      }
+    }
+  }
 }
 
 .datasheet__infos {
   margin-bottom: rem(30);
+
+  &.last {
+    margin-bottom: 0;
+  }
 }
 
 h2.datasheet__subtitle {
@@ -71,23 +106,23 @@ h2.datasheet__subtitle {
 }
 
 .datasheet__category__item__img {
-  width: rem(35);
-  padding-right: rem(13);
+  width: rem(28);
+  padding-right: rem(10);
 
   svg {
     width: 100%;
-    max-width: rem(22);
+    max-width: rem(18);
     height: auto;
     height: auto;
-    max-height: rem(22);
+    max-height: rem(18);
   }
 }
-
 
 .datasheet__obs {
   display: block;
   float: left;
   width: 100%;
+  margin-bottom: rem(40);
   font-family: $font;
   font-size: rem(10);
   line-height: 1.2;

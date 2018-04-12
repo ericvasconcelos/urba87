@@ -7,23 +7,37 @@
 
 .content {
   position: relative;
-  height: 80vh;
+  height: auto;
   width: 100%;
-  padding: 0 rem(30);
+  padding: 0 rem(15);
+
+  @media #{$media__m} {
+    height: 80vh;
+    padding: 0 rem(30);
+  }
 
   &--no-header {
+    height: auto;
     height: 90vh;
     padding: 0;
+
+    @media #{$media__m} {
+      height: 90vh;
+    }
   }
 }
 
 .row {
-  display: flex;
-  align-items: stretch;
+  display: block;
   padding: rem(15) 0;
   width: 100%;
   min-height: rem(1);
   @include clearfix;
+
+  @media #{$media__m} {
+    display: flex;
+    align-items: stretch;
+  }
 
   &--stretch {
     height: 100%;
@@ -32,62 +46,139 @@
 
 [class^='col-'] {
   position: relative;
+  @include clearfix;
 }
 
 .col-50,
 .col-half {
   display: block;
-  float: left;
-  width: 50%;
+  width: 100%;
+  margin-bottom: rem(40);
+
+  @media #{$media__m} {
+    width: 50%;
+    margin-bottom: 0;
+  }
 }
 
 .col-20 {
   display: block;
   float: left;
-  width: 20%;
+  width: 100%;
+  margin-bottom: rem(40);
+
+  @media #{$media__m} {
+    width: 20%;
+    margin-bottom: 0;
+  }
 }
+
+.col-30 {
+  display: block;
+  width: 100%;
+  margin-bottom: rem(40);
+
+  @media #{$media__m} {
+    width: 30%;
+    margin-bottom: 0;
+  }
+}
+
 
 .col-25 {
   display: block;
-  float: left;
-  width: 25%;
+  width: 100%;
+  margin-bottom: rem(40);
+
+  @media #{$media__m} {
+    width: 25%;
+    margin-bottom: 0;
+  }
 }
+
+.col-60 {
+  display: block;
+  width: 100%;
+  margin-bottom: rem(40);
+
+  @media #{$media__m} {
+    width: 60%;
+    margin-bottom: 0;
+  }
+}
+
 
 .col-75 {
   display: block;
-  float: left;
-  width: 75%;
+  width: 100%;
+  margin-bottom: rem(40);
+
+  @media #{$media__m} {
+    width: 50%;
+    margin-bottom: 0;
+  }
 }
+
+.mob-hide {
+  display: none;
+  
+  @media #{$media__m} {
+    display: block;
+  }
+}
+
+.mob-inlineblock-hide {
+  display: none;
+
+  @media #{$media__m} {
+    display: inline-block;
+  }
+}
+
+.mob-flex-hide {
+  display: none;
+
+  @media #{$media__m} {
+    display: flex;
+  }
+}
+
+.desk-hide {
+  @media #{$media__m} {
+    display: none;
+  }
+}
+
 
 $pages: 10, 20, 30, 40, 60, 80;
 
 @each $item in $pages {
   .padright-#{$item} {
-    padding-right: rem($item);
+    padding-right: rem($item) !important;
   }
 }
 
 @each $item in $pages {
   .padleft-#{$item} {
-    padding-left: rem($item);
+    padding-left: rem($item) !important;
   }
 }
 
 @each $item in $pages {
   .marginright-#{$item} {
-    margin-right: rem($item);
+    margin-right: rem($item) !important;
   }
 }
 
 @each $item in $pages {
   .marginleft-#{$item} {
-    margin-left: rem($item);
+    margin-left: rem($item) !important;
   }
 }
 
 @each $item in $pages {
   .marginbottom-#{$item} {
-    margin-bottom: rem($item);
+    margin-bottom: rem($item) !important;
   }
 }
 

@@ -27,9 +27,16 @@
   width: 70%;
   height: 80%;
   margin: 5% auto;
+
+  img {
+    display: none;
+    width: auto;
+    height: 80%;
+  }
 }
 
 .frame__wrapper {
+  display: none;
   position: relative;
   padding-bottom: 56.25%;
   padding-top: 30px;

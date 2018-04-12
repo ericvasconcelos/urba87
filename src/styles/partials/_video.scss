@@ -10,6 +10,14 @@
   text-decoration: none;
   text-align: center;
   cursor: pointer;
+
+  @media #{$media__m} {
+    height: rem(180);
+  }
+
+  @media #{$media__l} {
+    height: rem(250);
+  }
 }
 
 .video__wrap {
@@ -27,6 +35,14 @@
 .video__play {
   display: block;
   margin: 0 auto rem(10);
+
+  @media #{$media__m} {
+    width: rem(45);
+  }
+
+  @media #{$media__l} {
+    width: auto;
+  }
 }
 
 .video__title {
@@ -36,4 +52,12 @@
   letter-spacing: rem(0.5);
   color: $white;
   text-transform: uppercase;
+
+  @media #{$media__m} {
+    font-size: rem(12);
+  }
+
+  @media #{$media__l} {
+    font-size: rem(16);
+  }
 }

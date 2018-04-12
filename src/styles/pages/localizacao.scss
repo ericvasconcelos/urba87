@@ -1,5 +1,21 @@
 @import '../config/config';
 
+.location {
+  .row.first-row {
+    @media #{$media__m} {
+      border-bottom: rem(1) solid #c7c7c7;
+    }
+  }
+  
+  .col-mid {
+    @media #{$media__m} {
+      padding: 0 rem(30);
+      border-left: rem(1) solid #c7c7c7;
+      border-right: rem(1) solid #c7c7c7;
+    }
+  }
+}
+
 .location__address {
   display: flex;
   align-items: center;
@@ -17,30 +33,24 @@
     font-style: normal;
     text-transform: uppercase;
     color: $tomato;
+
+    @media #{$media__m} {
+      font-size: rem(13);
+    }
+
+    @media #{$media__l} {
+      font-size: rem(16);
+    }
   }
 }
 
-h1.location__title {
-  margin-bottom: rem(20);
-  font-family: $font-title;
-  font-size: rem(36);
-  line-height: 1.17;
-  letter-spacing: rem(-1.5);
-  text-transform: uppercase;
-  text-align: left;
-  color: $black;
-}
+.location__title {
+  @media #{$media__l} {
+    font-size: rem(30);
+  }
 
-p.location__paragraph {
-  font-family: $font;
-  font-size: rem(16);
-  font-weight: 300;
-  line-height: 1.38;
-  letter-spacing: rem(0.2);
-  color: $black;
-
-  strong {
-    font-weight: 500;
+  @media #{$media__xl} {
+    font-size: rem(36);
   }
 }
 
@@ -63,8 +73,22 @@ p.location__paragraph {
 .location__filter__item {
   display: flex;
   align-items: center;
+  float: left;
+  height: rem(26);
   margin-bottom: rem(15);
   cursor: pointer;
+
+  @media #{$media__m} {
+    width: 33.33333%;
+  }
+
+  @media #{$media__l} {
+    width: 25%;
+  }
+
+  @media #{$media__xl} {
+    width: 20%;
+  }
 
   p {
     font-family: $font;
@@ -83,15 +107,15 @@ p.location__paragraph {
 }
 
 .location__filter__item__img {
-  width: rem(35);
-  padding-right: rem(13);
+  width: rem(28);
+  padding-right: rem(10);
 
   svg {
     width: 100%;
-    max-width: rem(22);
+    max-width: rem(18);
     height: auto;
     height: auto;
-    max-height: rem(22);
+    max-height: rem(18);
   }
 }
 
@@ -128,38 +152,61 @@ p.location__paragraph {
   &.top {
     top: rem(-3);
     left: 50%;
+    margin-left: rem(-39);
   }
 
   &.right {
     top: 50%; 
     right: rem(-3);
+    margin-top: rem(-12);
   }
 
   &.bottom {
     bottom: rem(-3);
     left: 50%;
+    margin-left: rem(-39);
   }
 
   &.left {
     top: 50%; 
     left: rem(-3);
+    margin-top: rem(-12);
   }
 }
 
 a.location__map__googlemaps {
-  display: none;
-  position: absolute;
-  z-index: 2;
-  top: 50%;
-  left: 50%;
-  width: rem(300);
   height: rem(40);
-  margin-top: rem(-20);
-  margin-left: rem(-150);
-  padding-top: rem(8);
+  padding-top: rem(10);
   background-color: $tomato;
   text-align: center;
   text-decoration: none;
+
+  &:hover {
+    svg g {
+      fill: $greeny-blue;
+    }
+  }
+
+  &.first {
+    display: none;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    width: rem(300);
+    margin-top: rem(-20);
+    margin-left: rem(-150);
+  }
+
+  &.second {
+    display: block;
+    width: 100%;
+    margin: rem(20) auto rem(40);
+
+    @media #{$media__m} {
+      display: none;
+    }
+  }
 
   p {
     display: inline-block;
@@ -181,6 +228,10 @@ a.location__map__googlemaps {
       margin-top: rem(4);
       width: rem(12);
       height: rem(12);
+
+      g {
+        @include transition(all .2s linear);
+      }
     }
   }
 }
