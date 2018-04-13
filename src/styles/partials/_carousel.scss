@@ -84,6 +84,7 @@
   flex-direction: column;
   justify-content: center;
   height: 100%;
+  max-height: rem(496);
   background-color: $very-light-pink;
 
   &--three {
@@ -109,8 +110,10 @@
   border-bottom: rem(1) solid $white;
   cursor: pointer;
   opacity: 0.4;
+  @include transition(all .3s linear);
 
-  &.active {
+  &.active,
+  &:hover {
     opacity: 1;
   }
 

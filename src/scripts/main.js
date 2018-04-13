@@ -15,7 +15,7 @@ const pavimentoList = [
     title: 'Coluna 01',
     type: 'Pavimento TIPO',
     column: '01 e 02',
-    area: '68,49m2',
+    area: '68,49m²',
     options: [
       {
         name: 'Planta padrão',
@@ -36,7 +36,7 @@ const pavimentoList = [
     title: 'Coluna 02',
     type: 'Pavimento TIPO',
     column: '01 e 02',
-    area: '68,49m2',
+    area: '68,49m²',
     options: [
       {
         name: 'Planta padrão',
@@ -57,7 +57,7 @@ const pavimentoList = [
     title: 'Coluna 03',
     type: 'Pavimento TIPO',
     column: '03',
-    area: '69,44m2',
+    area: '69,44m²',
     options: [
       {
         name: 'Planta padrão',
@@ -74,7 +74,7 @@ const pavimentoList = [
     title: 'Coluna 04',
     type: 'Pavimento TIPO',
     column: '04',
-    area: '68,62m2',
+    area: '68,62m²',
     options: [
       {
         name: 'Planta padrão',
@@ -91,7 +91,7 @@ const pavimentoList = [
     title: 'Coluna 05',
     type: 'Pavimento TIPO',
     column: '05',
-    area: '68,44m2',
+    area: '68,44m²',
     options: [
       {
         name: 'Planta padrão',
@@ -108,7 +108,7 @@ const pavimentoList = [
     title: 'Coluna 06',
     type: 'Pavimento TIPO',
     column: '06',
-    area: '66,84m2',
+    area: '66,84m²',
     options: [
       {
         name: 'Planta padrão',
@@ -125,7 +125,7 @@ const pavimentoList = [
     title: 'Coluna 07',
     type: 'Pavimento TIPO',
     column: '07',
-    area: '69,26m2',
+    area: '69,26m²',
     options: [
       {
         name: 'Planta padrão',
@@ -142,7 +142,7 @@ const pavimentoList = [
     title: 'Cobertura',
     type: 'Pavimento TIPO',
     column: '01 e 02',
-    area: 'Coluna 01: 141,83m2 | Coluna 02: 138,30m2',
+    area: 'Coluna 01: 141,83m² | Coluna 02: 138,30m²',
     options: [
       {
         name: 'Planta padrão',
@@ -179,6 +179,7 @@ if (pathname === '/' || pathname === '/6d/urba/') {
 }
 
 $(function(){
+
   $('.modal__close').on('click', function() {
     $(this).closest('.js-modal').fadeOut(300)
     $('.frame__wrapper, .js-modal img').hide()
@@ -198,11 +199,20 @@ $(function(){
 
   // Home
   if (pathname === '/' || pathname === '/6d/urba/') {
-    $('.steps').show()
+    $('.menu-home').addClass('active');
+
+    // $('.introduction').on('mousewheel', function(e){
+    //   if(!(e.originalEvent.wheelDelta/120 > 0)) {
+    //     $('#first-scroll').removeClass('go-left')
+    //     $('.introduction').addClass('go-left')
+    //   }
+    // });
+
 
     const renderScroll = function() {
       const doc = document;
       var mouseWheelEvt = function (event) {
+        console.log('teste')
         if (doc.querySelector('.row').doScroll)
           doc.querySelector('.row').doScroll(event.wheelDelta>0?"left":"right");
         else if ((event.wheelDelta || event.detail) > 0)
@@ -237,7 +247,7 @@ $(function(){
         $('.overscroll')
           .find('.row')
           .animate(
-            {scrollLeft: positionAnchor - 30}, 800);
+            {scrollLeft: positionAnchor - 40}, 800);
 
         setTimeout(function() {
           $('.count').text('0' + position)
@@ -283,8 +293,6 @@ $(function(){
 
     $('.introduction__ahead__go').on('click', function() {
       $('.introduction').hide()
-      $('.content').removeClass('content--no-header')
-      $('.header, .overscroll').fadeIn(300);
       $('.slider').slider({ instructionText: "Deslize para ver a foto" })
       renderScroll()
     })
@@ -360,7 +368,8 @@ $(function(){
 
   // Plantas
   if (pathname === '/plantas.html' || pathname === '/6d/urba/plantas.html') {
-    // $('.header, .row').hide();
+    $('.menu-plantas').addClass('active');
+    $('.header').hide();
 
     const Masterplans = $('#masterplans')
     const Pavimento = $('#pavimento')
@@ -424,21 +433,26 @@ $(function(){
 
     $('.plant__introduction__item').on('click', function() {
       const type = $(this).data('type').trim();
-      $('.content').removeClass('content--no-header')
       $('.plant__introduction').hide();
-      $('.header, .row').fadeIn(300);
-      $('select__value').text(type)
+      $('.header, .content').fadeIn(300);
+      $('.select__plant').find('.select__value').text(type)
 
       if (type === 'masterplans') {
-        Masterplans.show()
+        Masterplans.fadeIn(300)
         $('.plant__space__infos').hide()
         $('.plant__masterplans__infos').show()
         masterplansCarousel()
+        const masterData = Masterplans.data('owl.carousel')
+        masterData.to(0)
+        legend.attr('src', '')
       } else {
-        Pavimento.show()
-        $('.plant__masterplans__infos').hides()
+        Pavimento.fadeIn(300)
+        $('.plant__masterplans__infos').hide()
         $('.plant__space__infos').show()
         pavimentoCarousel()
+        const pavData = Pavimento.data('owl.carousel')
+        pavData.to(0)
+        legend.attr('src', './images/legenda/apto-1.svg')
       }
     })
 
@@ -501,6 +515,7 @@ $(function(){
 
   // Perspectivas
   if (pathname === '/perspectivas.html' || pathname === '/6d/urba/perspectivas.html') {
+    $('.menu-perspectivas').addClass('active');
     $('.perspective__carousel').owlCarousel({
       items: 1,
       loop: false,
@@ -524,12 +539,65 @@ $(function(){
     })
   }
 
+  if (pathname === '/ficha-tecnica.html' || pathname === '/6d/urba/ficha-tecnica.html') {
+    $('.menu-ficha').addClass('active');
+  }
 
-  // Localização
-  $('.location__filter__item').on('click', function() {
-    $('.location__filter__item').removeClass('active')
-    $(this).addClass('active')
-    $('.js-map').attr('src', `./images/mapa-${$(this).data('filter')}.jpg`)
-  })
-  
+  if (pathname === '/localizacao.html' || pathname === '/6d/urba/localizacao.html') {
+    $('.menu-localizacao').addClass('active');
+
+    // Localização
+    $('.location__filter__item').on('click', function() {
+      $('.location__filter__item').removeClass('active')
+      $(this).addClass('active')
+      $('.js-map').attr('src', `./images/mapa-${$(this).data('filter')}.jpg`)
+    })
+  }
+
+  if (pathname === '/contato.html' || pathname === '/6d/urba/contato.html') {
+    $('.menu-contato').addClass('active');
+
+    $("input, area").focus(function() {
+      $(this).next('.message-error').fadeOut(200)
+    });
+
+    const validate = function() {
+      if ($('#contact-name').val() === '') {
+        $('#contact-name').next('.message-error').fadeIn(200)
+        return false;
+      }
+      
+      if ($('#contact-phone').val() === '') {
+        $('#contact-phone').next('.message-error').fadeIn(200)
+        return false;
+      }
+
+      if ($('#contact-email').val() === '') {
+        $('#contact-email').next('.message-error').fadeIn(200)
+        return false;
+      }
+
+      if ($('#contact-message').val() === '') {
+        $('#contact-message').next('.message-error').fadeIn(200)
+        return false;
+      }
+      
+      $('#contact-name').val('')
+      $('#contact-phone').val('')
+      $('#contact-email').val('')
+      $('#contact-message').val('')
+
+      return true;
+    }
+
+    $('#contact__submit').on('click', function(e) {
+      e.preventDefault()
+
+      if (validate()) {
+        $('#contact__response').fadeIn(300).delay(3000).fadeOut(300);
+      }
+    })
+  }
+
+
 });

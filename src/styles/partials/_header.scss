@@ -8,8 +8,12 @@
   border-bottom: rem(1) solid #c7c7c7;
 
   @media #{$media__m} {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     height: 10vh;
-    margin: 0 rem(30);
+    margin: 0 rem(40);
   }
 }
 
@@ -35,6 +39,12 @@
     g {
       @include transition(all .3s linear);
     }
+  }
+}
+
+.home {
+  .steps {
+    display: block;
   }
 }
 

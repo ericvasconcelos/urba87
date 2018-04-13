@@ -14,29 +14,30 @@ html(lang='pt-BR')
       .loading__instructions
         p #[strong para navegar:] scroll ou clique #[img(src='/images/inline/arrowbemvindo.svg')]
       
+  
+
+    .introduction
+      img.introduction__logo(src='/images/inline/logo.svg')
+      .introduction__infos
+        h1.introduction__title Dois quartos
+        p.introduction__subtitle com suíte e varanda (68#[span m]²)
+        p.introduction__paragraph Melhores ofertas de Coberturas Lineares!
+
+      .introduction__ahead
+        p.introduction__ahead__title Deixe-se acolher por esse novo estilo de vida.
+        a.introduction__ahead__go #[strong para começar:] scroll ou clique #[img(src='/images/inline/arrow-01-home.svg')]
 
     include includes/header.pug
 
-    #content.content.no-padding.content--no-header
-      .introduction
-        img.introduction__logo(src='/images/inline/logo.svg')
-        .introduction__infos
-          h1.introduction__title Dois quartos
-          p.introduction__subtitle com suíte e varanda (68#[span m]²)
-          p.introduction__paragraph Melhores ofertas de Coberturas Lineares!
-
-        .introduction__ahead
-          p.introduction__ahead__title Deixe-se acolher por esse novo estilo de vida.
-          a.introduction__ahead__go #[strong para começar:] scroll ou clique #[img(src='/images/inline/arrow-01-home.svg')]
-      
+    #content.content
       .overscroll
-        .row
-          .col-small.col-1
+        .row.no-pad
+          .col-small.col-1.padright-30.padleft-0
             h1.enterprise__chapter#natural
               span 01
-              p NATURALMENTE  URBANO
+              p NATURALMENTE  #[br] URBANO
             p.enterprise__paragraph O #[strong Urbá#87] chega à região da Tijuca, criando uma nova experiência em moradia, com espaços criados para serem cenários de experiências em comunhão: com pessoas, com o verde, com o design e com a cidade. 
-            p.enterprise__paragraph Deixe-se acolher por esse novo estilo de vida.  #[strong Bem-vindos ao Urbá#87].
+            p.enterprise__paragraph.first Deixe-se acolher por esse novo estilo de vida.  #[strong Bem-vindos ao Urbá#87].
 
             .video.enterprise__video.js-open-modal(data-item='video')
               .video__wrap
@@ -63,7 +64,7 @@ html(lang='pt-BR')
               p CASARÕES
             p.enterprise__paragraph Uma #[strong atenção especial] foi dedicada à #[strong arquitetura] e ao #[strong paisagismo] do empreendimento. #[strong Os casarões] com pé direto alto, parte da paisagem local, mantém azulejos e pedras tradicionais conservados, valorizando #[strong as áreas comuns].
 
-          .col-small.col-4
+          .col-small.col-carousel.col-4
             .carousel__column.carousel__column--four
               .carousel__dot.celebrate__dot.active(data-index='0')
                 h3 COMEMORAR
@@ -93,15 +94,15 @@ html(lang='pt-BR')
             h1.enterprise__chapter#rooftop
               span 03
               p ROOFTOP
-            p.enterprise__paragraph Na área #[strong comum da cobertura], uma ampla e linda vista alcança o #[strong Cristo] e se torna moldura para momentos de lazer e descanso.  #[strong Piscina, sauna] e um #[strong quintal gourmet], com churrasqueira e forno de pizza, completam as opões de lazer que o #[strong Urbá#87] oferece.
+            p.enterprise__paragraph.third Na área #[strong comum da cobertura], uma ampla e linda vista alcança o #[strong Cristo] e se torna moldura para momentos de lazer e descanso.  #[strong Piscina, sauna] e um #[strong quintal gourmet], com churrasqueira e forno de pizza, completam as opões de lazer que o #[strong Urbá#87] oferece.
 
             .modal-thumb.marginbottom-30.js-open-modal(data-item='rooftop')
               .btn.modal-thumb__title
-                h3 ver planta do casarão
+                h3 ver planta do rooftop
                 img(src='/images/inline/plantas.svg')
               img.modal-thumb__img(src='./images/Urba_rooftop.jpg')
               
-          .col-small.col-7
+          .col-small.col-carousel.col-7
             .carousel__column.carousel__column--three
               .carousel__dot.plant__dot.active(data-index='0')
                 h3 relaxar
@@ -128,11 +129,11 @@ html(lang='pt-BR')
 
             h1.enterprise__chapter#art
               span 04
-              p A ARTE DE VIVER BEM
+              p A ARTE DE #[br] VIVER BEM
 
-            p.enterprise__paragraph Uma atenção especial foi dedicada à arquitetura e ao paisagismo do empreendimento. Os casarões com pé direto alto, parte da paisagem local, mantém azulejos e pedras tradicionais conservados, valorizando as áreas comuns.
+            p.enterprise__paragraph Os #[strong diferenciais do Urbá#87] foram idealizados de acordo com as tendências mais atuais em #[strong convivência urbana, sustentabilidade]  e economia colaborativa. São espaços #[strong compartilháveis e modernos], com uma estrutura completa para facilitar o seu dia a dia. 
 
-          .col-small.col-10
+          .col-small.col-carousel.col-10
             .carousel__column.carousel__column--four
               .carousel__dot.art__dot.active(data-index='0')
                 h3 produzir
@@ -159,14 +160,15 @@ html(lang='pt-BR')
                 img(src='./images/Urba_G04_plantar.jpg')
           
           .col-small.col-11.end-scroll.no-pad
-            a.link
+            a.link(href='./plantas.html')
               p Clique para saber mais
               h4 plantas
 
     include includes/menu.pug
 
     .modal.js-modal
-      .modal__close x
+      .btn.modal__close
+        img(src='/images/inline/close.svg')
       .modal__content
         .frame__wrapper.modal__video
           iframe(width='560', height='315', src='https://www.youtube.com/embed/GY02YyPC2iI?rel=0&amp;showinfo=0', frameborder='0', allow='autoplay; encrypted-media', allowfullscreen)

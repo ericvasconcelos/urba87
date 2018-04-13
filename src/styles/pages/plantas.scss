@@ -1,6 +1,11 @@
 @import '../config/config';
 
 .plant {
+  .header,
+  .content {
+    display: none;
+  }
+
   .col-25.first {
     @media #{$media__m} {
       padding-right: rem(20);

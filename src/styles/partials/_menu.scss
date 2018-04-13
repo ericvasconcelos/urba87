@@ -12,7 +12,12 @@
   @include clearfix;
 
   @media #{$media__m} {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
     height: 10vh;
+    padding: 0 rem(40);
   }
 }
 
@@ -22,7 +27,6 @@
   float: left;
   top: 50%;
   margin-top: rem(-14);
-  margin-left: rem(33);
 }
 
 .menu__list__item {
@@ -100,7 +104,6 @@
 
 .menu__social__item {
   position: relative;
-  margin-right: rem(30);
   cursor: pointer;
 
   @media #{$media__m} {
@@ -125,22 +128,28 @@
     }
   }
   
-  &:last-child:before {
-    content: '|';
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: rem(30);
-    font-size: 18px;
-    font-weight: 500;
-
-    @media #{$media__m} {
-      margin-right: rem(5);
-    }
-
-    @media #{$media__l} {
+  &:last-child {
+    margin-right: rem(0);
+    
+    &:before {
+      content: '|';
+      display: inline-block;
+      vertical-align: middle;
       margin-right: rem(30);
+      font-size: 18px;
+      font-weight: 500;
+
+      @media #{$media__m} {
+        margin-right: rem(5);
+      }
+
+      @media #{$media__l} {
+        margin-right: rem(30);
+      }
     }
   }
+
+  
 
   &:hover {
     .menu__social__item__info {

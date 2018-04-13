@@ -1,37 +1,41 @@
 .modal {
   display: none;
   position: absolute;
-  z-index: 999;
+  z-index: 99999;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   background-color: rgba($white, 0.9);
+
+  .modal__close {
+    position: absolute;
+  }
 }
 
 .modal__close {
-  position: absolute;
+  z-index: 2;
   top: rem(30);
   right: rem(30);
-  width: 30px;
-  height: 30px;
+  width: rem(30);
+  height: rem(30);
   background-color: $tomato;
   border-radius: 50%;
-  color: $white;
   text-align: center;
-  font-size: rem(24);
+  line-height: rem(34);
   cursor: pointer;
+  overflow: hidden;
 }
 
 .modal__content {
   width: 70%;
-  height: 80%;
+  height: 90%;
   margin: 5% auto;
 
   img {
     display: none;
     width: auto;
-    height: 80%;
+    height: 100%;
   }
 }
 

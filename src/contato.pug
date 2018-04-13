@@ -12,19 +12,19 @@ html(lang='pt-BR')
           
         .col-50.padright-40
           form#contact__form.contact__form.form
-            .input
+            label.input(for='contact-name')
               input#contact-name(type='text', name='name', placeholder='Nome', required)
               span.message-error Você precisa preencher esse campo
             
-            .input
+            label.input(for='contact-phone')
               input#contact-phone(type='tel', name='phone', placeholder='Telefone', required)
               span.message-error Você precisa preencher esse campo
 
-            .input
+            label.input(for='contact-email')
               input#contact-email(type='email', name='email', placeholder='Email', required)
               span.message-error Você precisa preencher esse campo
 
-            .input
+            label.input(for='contact-message')
               textarea#contact-message(name='message', placeholder='Mensagem', required)
               span.message-error Você precisa preencher esse campo
 
@@ -51,13 +51,13 @@ html(lang='pt-BR')
             p.contact__infos__text /urba87
 
     include includes/menu.pug
-    
-    #modal.modal
-      .modal__close x
-      .modal__content
-        .frame__wrapper
-          iframe(width='560', height='315', src='https://www.youtube.com/embed/GY02YyPC2iI?rel=0&amp;showinfo=0', frameborder='0', allow='autoplay; encrypted-media', allowfullscreen)
 
+    #contact__response.contact__response
+      .contact__response__content
+        img(src='/images/inline/logo-black.svg')
+        p.contact__response__content__welcome
+          strong Mensagem enviada com sucesso!
+    
       
     script(src='./scripts/jquery-3.3.1.min.js')
     script(src='./scripts/main.min.js')

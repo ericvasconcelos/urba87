@@ -1,17 +1,16 @@
 doctype html  
 html(lang='pt-BR')
   include includes/head.pug
-  body
+  body.plant
     include includes/header.pug
-
+    
+    .plant__introduction
+      .left
+        a.plant__introduction__item(href='#', data-type='pavimento tipo') pavimento tipo
+        a.plant__introduction__item(href='#', data-type='masterplans') masterplans
+      .right
+          
     #content.content.plant
-      //- .plant__introduction
-      //-   .left
-      //-     a.plant__introduction__item(href='#', data-type='pavimento tipo') pavimento tipo
-      //-     a.plant__introduction__item(href='#', data-type='masterplans') masterplans
-      //-   .right
-
-
       .row.row--stretch
         .col-25.first
           .select.select__plant

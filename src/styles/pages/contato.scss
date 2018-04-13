@@ -2,6 +2,7 @@
 
 .form {
   .input {
+    display: block;
     position: relative;
     margin-bottom: rem(25);
 
@@ -19,6 +20,12 @@
       color: $cloudy;
       @include placeholder {
         color: $black;
+      }
+
+      &:focus {
+        & + span {
+          display: none !important;
+        }
       }
     }
 
@@ -150,6 +157,54 @@
 
   .contact__infos__wpp {
     margin-left: rem(8);
+  }
+}
+
+
+.contact__response {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  background-color: $cloudy-two;
+  text-align: center;
+}
+
+.contact__response__content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 80%;
+  max-width: rem(440);
+  height: rem(210);
+  margin: auto;
+
+  svg {
+    display: block;
+    margin: 0 auto rem(30);
+    width: rem(150);
+    height: rem(150);
+  }
+}
+
+.contact__response__content__welcome {
+  font-size: rem(30);
+  font-weight: 300;
+  line-height: 1.33;
+  letter-spacing: normal;
+  text-align: center;
+  text-transform: uppercase;
+  color: #372e2d;
+  
+  strong {
+   font-weight: 500; 
   }
 }
 

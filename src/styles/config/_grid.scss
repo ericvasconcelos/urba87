@@ -2,18 +2,40 @@
 @import './functions';
 @import './mixins';
 @import './variables';
-
 @import './reset';
+
+body,
+html {
+  @media #{$media__m} {
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+}
 
 .content {
   position: relative;
   height: auto;
-  width: 100%;
-  padding: 0 rem(15);
+  width: calc(100% - 30px);
+  margin: 0 rem(15);
 
   @media #{$media__m} {
-    height: 80vh;
-    padding: 0 rem(30);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: rem(496);
+    width: calc(100% - 80px);
+    margin: auto;
+  }
+
+  // @media #{$media__l} {
+  //   height: rem(506);
+  // }
+
+  @media #{$media__xxl} {
+    height: rem(686);
   }
 
   &--no-header {
@@ -29,7 +51,7 @@
 
 .row {
   display: block;
-  padding: rem(15) 0;
+  padding: rem(10) 0;
   width: 100%;
   min-height: rem(1);
   @include clearfix;
@@ -150,7 +172,7 @@
 }
 
 
-$pages: 10, 20, 30, 40, 60, 80;
+$pages: 0, 10, 20, 30, 40, 60, 80;
 
 @each $item in $pages {
   .padright-#{$item} {
