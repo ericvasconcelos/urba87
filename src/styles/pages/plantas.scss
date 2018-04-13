@@ -368,9 +368,12 @@ a.plant__space__download {
   }
 }
 
-.plant__space__infos{
+.plant__space__infos, 
+.plant__masterplans__infos {
+  display: none;
   padding: rem(30);
 }
+
 
 .plant__space__infos__img {
   display: block;
@@ -379,7 +382,8 @@ a.plant__space__download {
   height: auto;
 }
 
-h3.plant__space__infos__title {
+h3.plant__space__infos__title,
+h3.plant__masterplans__infos__title {
   margin-bottom: rem(10);
   font-family: $font;
   font-size: rem(18);

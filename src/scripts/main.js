@@ -1,5 +1,158 @@
 const pathname = window.location.pathname
 
+const masterplansList = [
+  {
+    title: 'Térreo'
+  },
+  {
+    title: 'Cobertura'
+  }
+]
+
+const pavimentoList = [
+  {
+    legend: './images/legenda/apto-1.svg',
+    title: 'Coluna 01',
+    type: 'Pavimento TIPO',
+    column: '01 e 02',
+    area: '68,49m2',
+    options: [
+      {
+        name: 'Planta padrão',
+        img: './images/plantas/pavimento/coluna1/padrao.jpg'
+      },
+      {
+        name: 'Gisele Taranto',
+        img: './images/plantas/pavimento/coluna1/gisele.jpg'
+      },
+      {
+        name: 'Planta Suíte Ampliada',
+        img: './images/plantas/pavimento/coluna1/ampliado.jpg'
+      },
+    ]
+  },
+  {
+    legend: './images/legenda/apto-2.svg',
+    title: 'Coluna 02',
+    type: 'Pavimento TIPO',
+    column: '01 e 02',
+    area: '68,49m2',
+    options: [
+      {
+        name: 'Planta padrão',
+        img: './images/plantas/pavimento/coluna2/padrao.jpg'
+      },
+      {
+        name: 'Gisele Taranto',
+        img: './images/plantas/pavimento/coluna2/gisele.jpg'
+      },
+      {
+        name: 'Planta Suíte Ampliada',
+        img: './images/plantas/pavimento/coluna2/ampliado.jpg'
+      },
+    ],
+  },
+  {
+    legend: './images/legenda/apto-3.svg',
+    title: 'Coluna 03',
+    type: 'Pavimento TIPO',
+    column: '03',
+    area: '69,44m2',
+    options: [
+      {
+        name: 'Planta padrão',
+        img: './images/plantas/pavimento/coluna3/padrao.jpg'
+      },
+      {
+        name: 'Planta Suíte Ampliada',
+        img: './images/plantas/pavimento/coluna3/ampliado.jpg'
+      },
+    ],
+  },
+  {
+    legend: './images/legenda/apto-4.svg',
+    title: 'Coluna 04',
+    type: 'Pavimento TIPO',
+    column: '04',
+    area: '68,62m2',
+    options: [
+      {
+        name: 'Planta padrão',
+        img: './images/plantas/pavimento/coluna4/padrao.jpg'
+      },
+      {
+        name: 'Planta Suíte Ampliada',
+        img: './images/plantas/pavimento/coluna4/ampliado.jpg'
+      },
+    ],
+  },
+  {
+    legend: './images/legenda/apto-5.svg',
+    title: 'Coluna 05',
+    type: 'Pavimento TIPO',
+    column: '05',
+    area: '68,44m2',
+    options: [
+      {
+        name: 'Planta padrão',
+        img: './images/plantas/pavimento/coluna5/padrao.jpg'
+      },
+      {
+        name: 'Planta Suíte Ampliada',
+        img: './images/plantas/pavimento/coluna5/ampliado.jpg'
+      },
+    ],
+  },
+  {
+    legend: './images/legenda/apto-6.svg',
+    title: 'Coluna 06',
+    type: 'Pavimento TIPO',
+    column: '06',
+    area: '66,84m2',
+    options: [
+      {
+        name: 'Planta padrão',
+        img: './images/plantas/pavimento/coluna6/padrao.jpg'
+      },
+      {
+        name: 'Planta Suíte Ampliada',
+        img: './images/plantas/pavimento/coluna6/ampliado.jpg'
+      },
+    ],
+  },
+  {
+    legend: './images/legenda/apto-7.svg',
+    title: 'Coluna 07',
+    type: 'Pavimento TIPO',
+    column: '07',
+    area: '69,26m2',
+    options: [
+      {
+        name: 'Planta padrão',
+        img: './images/plantas/pavimento/coluna7/padrao.jpg'
+      },
+      {
+        name: 'Planta Suíte Ampliada',
+        img: './images/plantas/pavimento/coluna7/ampliado.jpg'
+      },
+    ],
+  },
+  {
+    legend: './images/legenda/cobertura.svg',
+    title: 'Cobertura',
+    type: 'Pavimento TIPO',
+    column: '01 e 02',
+    area: 'Coluna 01: 141,83m2 | Coluna 02: 138,30m2',
+    options: [
+      {
+        name: 'Planta padrão',
+        img: './images/plantas/pavimento/cobertura/cobertura.jpg'
+      }
+    ],
+  }
+]
+
+
 
 if (pathname === '/' || pathname === '/6d/urba/') {
   $(document).ready( function(){
@@ -211,20 +364,13 @@ $(function(){
 
     const Masterplans = $('#masterplans')
     const Pavimento = $('#pavimento')
-    const title = $('#title')
+    const legend = $('#legend')
+    const titleMaster = $('#title-master')
+    const titlePav = $('#title-pav')
     const type = $('#type')
     const column = $('#column')
     const area = $('#area')
     const options = $('#options')
-
-    const masterplansList = [
-      {
-        title: 'Térreo'
-      },
-      {
-        title: 'Cobertura'
-      }
-    ]
 
     const masterplansCarousel = function () {
       Masterplans.owlCarousel({
@@ -236,8 +382,7 @@ $(function(){
         onChanged: function(event) {
           let index = event.item.index
           if (index !== null && index !== "") {
-            console.log()
-            title.text(masterplansList[index].title)
+            titleMaster.text(masterplansList[index].title)
           }
         }
       })
@@ -249,7 +394,31 @@ $(function(){
         loop: false,
         margin: 0,
         nav: true,
-        dots: false
+        dots: false,
+        onChanged: function(event) {
+          let index = event.item.index
+          if (index !== null && index !== "") {
+            legend.attr('src', pavimentoList[index].legend)
+            titlePav.text(pavimentoList[index].title)
+            type.text(pavimentoList[index].type)
+            column.text(pavimentoList[index].column)
+            area.text(pavimentoList[index].area)
+            $('.select__space__infos')
+              .find('.select__value')
+              .text(pavimentoList[index].options[0].name)
+
+            Pavimento
+              .find('.owl-item')
+              .eq(index)
+              .find('img')
+              .attr('src', pavimentoList[index].options[0].img)
+
+            options.empty()
+            pavimentoList[index].options.map(function(item) {
+              options.append(`<div class="select__dropdown__item" data-img="${item.img}" data-index="${index}">${item.name}<div>`)
+            })
+          }
+        }
       })
     }
 
@@ -262,9 +431,13 @@ $(function(){
 
       if (type === 'masterplans') {
         Masterplans.show()
+        $('.plant__space__infos').hide()
+        $('.plant__masterplans__infos').show()
         masterplansCarousel()
       } else {
         Pavimento.show()
+        $('.plant__masterplans__infos').hides()
+        $('.plant__space__infos').show()
         pavimentoCarousel()
       }
     })
@@ -274,22 +447,25 @@ $(function(){
     })
 
     const selectPlant = $('.select__plant')
-    const legend = $('#legend')
 
     selectPlant.find('.select__dropdown__item').on('click', function() {
       let val = $(this).text().trim();
-      selectPlant.find('.select__value').text(val);
+      selectPlant.find('.select__value').text(val)
       $('.plant__carousel').hide()
 
       if (val === 'masterplans') {
-        Masterplans.fadeIn(300);
+        Masterplans.fadeIn(300)
+        $('.plant__space__infos').hide()
+        $('.plant__masterplans__infos').show()
         masterplansCarousel()
         const masterData = Masterplans.data('owl.carousel')
         masterData.to(0)
         legend.attr('src', '')
 
       } else if (val === 'pavimento tipo') {
-        Pavimento.fadeIn(300);
+        Pavimento.fadeIn(300)
+        $('.plant__masterplans__infos').hide()
+        $('.plant__space__infos').show()
         pavimentoCarousel()
         const pavData = Pavimento.data('owl.carousel')
         pavData.to(0)
@@ -300,18 +476,23 @@ $(function(){
     })
 
     const selectSpace = $('.select__space__infos')
-    selectSpace.find('.select__dropdown__item').on('click', function() {
+    selectSpace.on('click', '.select__dropdown__item', function() {
       let val = $(this).text().trim();
-      selectSpace.find('.select__value').text(val);
+      let index = $(this).data('index');
+      let img = $(this).data('img');
+      selectSpace.find('.select__value').text(val)
 
-
+      Pavimento
+        .find('.owl-item.active')
+        .find('img')
+        .attr('src', img)
     })
 
     $(document).mouseup(function(e) {
     var container = $('.select');
       // if the target of the click isn't the container nor a descendant of the container
       if (!container.is(e.target) && container.has(e.target).length === 0) {
-        container.removeClass('active');
+        container.removeClass('active')
       }
     });
     

@@ -31,8 +31,7 @@
       -webkit-transition-duration: 0.3s;
       transition-duration: 0.3s;
 
-      &:hover,
-      &:focus {
+      &:hover {
         &:before {
           -webkit-transform: scaleX(1);
           transform: scaleX(1);
