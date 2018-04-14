@@ -15,3 +15,27 @@ header.header
 
     .steps__foward
       img(src='/images/inline/arrowright.svg')
+
+
+  a.btn.header__button Entre em contato conosco
+
+.header__form
+  .container
+    form.form
+      .col-input
+        label.input(for='contact-name')
+          input#contact-name(type='text', name='name', placeholder='Nome', required)
+          span.message-error Você precisa preencher esse campo
+      
+      .col-input
+        label.input(for='contact-phone')
+          input#contact-phone(type='tel', name='phone', placeholder='Telefone', required)
+          span.message-error Você precisa preencher esse campo
+      
+      .col-input
+        label.input(for='contact-email')
+          input#contact-email(type='email', name='email', placeholder='Email', required)
+          span.message-error Você precisa preencher esse campo
+      
+      .col-button
+        button#contact__submit enviar #[img(src='/images/inline/arrowbemvindo.svg')]

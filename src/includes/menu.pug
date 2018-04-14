@@ -1,19 +1,23 @@
 menu.menu
-  nav.menu__list.mob-hide
-    a.menu__list__item.menu-home(href='./') Empreendimento
-    a.menu__list__item.menu-plantas(href='./plantas.html')  Plantas
-    a.menu__list__item.menu-perspectivas(href='./perspectivas.html')  Perspectivas
-    a.menu__list__item.menu-ficha(href='./ficha-tecnica.html')  Ficha Técnica
-    a.menu__list__item.menu-localizacao(href='./localizacao.html')  Localização
-    a.menu__list__item.menu-contato(href='./contato.html')  Contato
-  
-  nav.menu__social
-    a.menu__social__item(href='https://www.facebook.com/urba87/?ref=br_rs', target='_blank')
-      img(src='/images/inline/facebook.svg')
-    a.menu__social__item
-      img(src='/images/inline/telefone.svg')
-    a.menu__social__item
-      img(src='/images/inline/gmail.svg')
-    a.menu__social__item.mob-inlineblock-hide
-      span.menu__social__item__info cronograma da obra
-      img(src='/images/inline/calendar.svg')
+  .container
+    nav.menu__list.mob-hide
+      a.menu__list__item.menu-home(href='./') Empreendimento
+      a.menu__list__item.menu-plantas(href='./plantas.html')  Plantas
+      a.menu__list__item.menu-perspectivas(href='./perspectivas.html')  Perspectivas
+      a.menu__list__item.menu-ficha(href='./ficha-tecnica.html')  Ficha Técnica
+      a.menu__list__item.menu-localizacao(href='./localizacao.html')  Localização
+      a.menu__list__item.menu-contato(href='./contato.html')  Contato
+    
+    nav.menu__social
+      a.menu__social__item(href='https://www.facebook.com/urba87/?ref=br_rs', target='_blank')
+        span.menu__social__item__info.menu__social__item__info--fb Siga a gente
+        img(src='/images/inline/facebook.svg')
+      a.menu__social__item
+        span.menu__social__item__info.menu__social__item__info--tel  (21) 99725-2550
+        img(src='/images/inline/telefone.svg')
+      a.menu__social__item
+        span.menu__social__item__info.menu__social__item__info--email  contato@urba87.com.br 
+        img(src='/images/inline/gmail.svg')
+      //- a.menu__social__item.mob-inlineblock-hide
+      //-   span.menu__social__item__info cronograma da obra
+      //-   img(src='/images/inline/calendar.svg')

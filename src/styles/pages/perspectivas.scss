@@ -150,7 +150,8 @@
     padding: rem(22) 0;
   }
 
-  &.active {
+  &.active,
+  &:hover {
     opacity: 1;
   }
 

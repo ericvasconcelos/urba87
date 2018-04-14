@@ -1,7 +1,7 @@
 @import '../config/config';
 
 .loading {
-  display: block;
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -68,6 +68,18 @@
   text-transform: uppercase;
   color: $black;
   cursor: pointer;
+
+  &:hover {
+    svg {
+      ellipse {
+        fill: $greeny-blue;
+      }
+
+      g g path:first-child {
+        fill: $greeny-blue;
+      }
+    }
+  }
   
   strong {
     font-weight: 600
@@ -76,18 +88,28 @@
   svg {
     margin-left: rem(7);
     vertical-align: middle;
+
+    ellipse,
+    path {
+      @include transition(all .3s linear);
+    }
   }
 }
 
 // Introduction
 .introduction {
-  // display: none;
+  display: none;
   position: relative;
   z-index: 10;
   height: 90vh;
   width: 100%;
   background: url(../images/Urba_HOME1920.jpg) no-repeat center 100% $black;
   background-size: cover;
+  @include transition(all 2s ease-in-out);
+
+  &.goout {
+    @include transform(translateX(-100%))
+  }
 }
 
 .introduction__logo {
@@ -196,15 +218,29 @@
 }
 
 
+// .home {
+//   overflow-x: hidden; 
+
+//   .header,
+//   .content {
+//     @include transform(translateX(90%))
+//     @include transition(all 2s ease-in-out);
+
+//     &.active {
+//       @include transform(translateX(0))
+//     }
+//   }
+// }
+
 .overscroll {
   width: 100%;
 
   .row {
-    height: 80vh;
     display: flex;
     flex-wrap: nowrap;
     align-items: stretch;
     overflow-x: auto;
+    overflow-y: hidden; 
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
     padding: 0;

@@ -153,10 +153,8 @@ const pavimentoList = [
 ]
 
 
-
 if (pathname === '/' || pathname === '/6d/urba/') {
   $(document).ready( function(){
-    // When the page has loaded
     let percent = 0;
     var bar1 = new ldBar(".ldBar");
     var bar2 = $('.ldBar').ldBar;
@@ -179,6 +177,9 @@ if (pathname === '/' || pathname === '/6d/urba/') {
 }
 
 $(function(){
+  $('.header__button').on('click', function() {
+    $('.header__form').slideToggle(300);
+  })
 
   $('.modal__close').on('click', function() {
     $(this).closest('.js-modal').fadeOut(300)
@@ -201,28 +202,32 @@ $(function(){
   if (pathname === '/' || pathname === '/6d/urba/') {
     $('.menu-home').addClass('active');
 
-    // $('.introduction').on('mousewheel', function(e){
-    //   if(!(e.originalEvent.wheelDelta/120 > 0)) {
-    //     $('#first-scroll').removeClass('go-left')
-    //     $('.introduction').addClass('go-left')
-    //   }
-    // });
-
-
-    const renderScroll = function() {
-      const doc = document;
-      var mouseWheelEvt = function (event) {
-        console.log('teste')
-        if (doc.querySelector('.row').doScroll)
-          doc.querySelector('.row').doScroll(event.wheelDelta>0?"left":"right");
-        else if ((event.wheelDelta || event.detail) > 0)
-          doc.querySelector('.row').scrollLeft -= 30;
-        else
-          doc.querySelector('.row').scrollLeft += 30;
-
-        return false;
+    $('.introduction').on('mousewheel', function(e){
+      if(!(e.originalEvent.wheelDelta/120 > 0)) {
+        $('.header, .content').addClass('active')
+        $('.introduction').addClass('goout')
       }
-      doc.querySelector('.row').addEventListener("mousewheel", mouseWheelEvt);
+    });
+
+    $('.introduction__ahead__go').on('click', function() {
+      $('.header, .content').addClass('active')
+      $('.introduction').addClass('goout')
+    })
+
+    $('.slider').slider({ instructionText: "Deslize para ver a foto" })
+    renderScroll()
+
+
+    function renderScroll() {
+      var initScroll = 0;
+      $('.overscroll').on('mousewheel', function(e){
+        console.log('teste');
+        if(!(e.originalEvent.wheelDelta/120 > 0)) {
+          $('.row').scrollLeft(initScroll += 30)
+        } else {
+          $('.row').scrollLeft(initScroll -= 30)
+        }
+      });
 
       const natural = $('#natural').offset().left
       const casarao = $('#casarao').offset().left
@@ -247,7 +252,7 @@ $(function(){
         $('.overscroll')
           .find('.row')
           .animate(
-            {scrollLeft: positionAnchor - 40}, 800);
+            {scrollLeft: positionAnchor - $('#content').offset().left}, 800);
 
         setTimeout(function() {
           $('.count').text('0' + position)
@@ -290,12 +295,6 @@ $(function(){
         $('.count').text('0' + position)
       })
     }
-
-    $('.introduction__ahead__go').on('click', function() {
-      $('.introduction').hide()
-      $('.slider').slider({ instructionText: "Deslize para ver a foto" })
-      renderScroll()
-    })
 
     $('.celebrate__carousel').owlCarousel({
       items: 1,
@@ -590,11 +589,24 @@ $(function(){
       return true;
     }
 
+    // fillLoadingAnimation()
+
     $('#contact__submit').on('click', function(e) {
       e.preventDefault()
 
       if (validate()) {
         $('#contact__response').fadeIn(300).delay(3000).fadeOut(300);
+        let percent = 0;
+        var bar1 = new ldBar(".contact-bar");
+        var bar2 = $('.contact-bar').ldBar;
+
+        const calcPercent = setInterval(() => {
+          if (percent !== 100) {
+            bar1.set(percent += 1);
+          } else {
+            clearInterval(calcPercent)
+          }
+        }, 30)
       }
     })
   }

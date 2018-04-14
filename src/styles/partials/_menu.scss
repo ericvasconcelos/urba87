@@ -2,7 +2,7 @@
 
 .menu {
   position: relative;
-  z-index: 1;
+  z-index: 99;
   display: block;
   clear: both;
   height: rem(100);
@@ -105,6 +105,16 @@
 .menu__social__item {
   position: relative;
   cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
 
   @media #{$media__m} {
     margin-right: rem(5);
@@ -113,6 +123,32 @@
   @media #{$media__l} {
     margin-right: rem(30);
   }
+
+  &:hover {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+
+    .menu__social__item__info {
+      margin-bottom: rem(10);
+    }
+
+    &:after {
+      position: absolute;
+      z-index: -1;
+      content: '';
+      left: calc(50% - 10px);
+      bottom: rem(-5);
+      border-style: solid;
+      border-width: 10px 10px 0 10px;
+      border-color: $tomato transparent transparent transparent;
+      -webkit-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+      -webkit-transition-property: transform;
+      transition-property: transform;
+    }
+  }
+
+  
 
   svg {
     position: relative;
@@ -131,22 +167,22 @@
   &:last-child {
     margin-right: rem(0);
     
-    &:before {
-      content: '|';
-      display: inline-block;
-      vertical-align: middle;
-      margin-right: rem(30);
-      font-size: 18px;
-      font-weight: 500;
+    // &:before {
+    //   content: '|';
+    //   display: inline-block;
+    //   vertical-align: middle;
+    //   margin-right: rem(30);
+    //   font-size: 18px;
+    //   font-weight: 500;
 
-      @media #{$media__m} {
-        margin-right: rem(5);
-      }
+    //   @media #{$media__m} {
+    //     margin-right: rem(5);
+    //   }
 
-      @media #{$media__l} {
-        margin-right: rem(30);
-      }
-    }
+    //   @media #{$media__l} {
+    //     margin-right: rem(30);
+    //   }
+    // }
   }
 
   
@@ -176,11 +212,30 @@
   height: rem(30);
   width: rem(190);
   padding: 0 rem(10) 0 rem(40);
+  color: $black;
   font-size: rem(12);
   line-height: rem(32);
   text-transform: uppercase;
   letter-spacing: rem(01);
   @include rotate(270deg);
+
+  &--fb {
+    left: rem(-53);
+    width: rem(138);
+    bottom: rem(46);
+  }
+
+  &--tel {
+    left: rem(-61);
+    width: rem(155);
+    bottom: rem(55);
+  }
+
+  &--email {
+    left: rem(-87);
+    width: rem(206);
+    bottom: rem(80);
+  }
 }
 
 
